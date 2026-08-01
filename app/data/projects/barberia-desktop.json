@@ -1,0 +1,61 @@
+{
+  "id": "barberia-desktop",
+  "name": "Sistema de Barbería Desktop",
+  "type": "desktop",
+  "category": "Sistema Administrativo",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Desktop Developer",
+  "team_size": 1,
+
+  "description": "Sistema de escritorio para administrar clientes, citas y ventas de una barbería.",
+
+  "problem": "El negocio administraba toda la información manualmente.",
+
+  "solution": "Aplicación de escritorio para controlar clientes, productos y ventas.",
+
+  "technologies": [
+    "C#",
+    ".NET",
+    "SQL Server"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "Windows Forms"
+    ],
+    "backend": [
+      ".NET"
+    ],
+    "database": [
+      "SQL Server"
+    ]
+  },
+
+  "features": [
+    "Clientes.",
+    "Productos.",
+    "Ventas.",
+    "Reservaciones."
+  ],
+
+  "impact": "Reduce tiempos administrativos y mejora el control de ventas.",
+
+  "what_i_learned": [
+    "Aplicaciones Desktop.",
+    "SQL Server.",
+    "C#."
+  ],
+
+  "future_improvements": [
+    "Facturación.",
+    "Sincronización con la nube."
+  ],
+
+  "related_skills": [
+    "C#",
+    ".NET",
+    "SQL Server"
+  ]
+}
