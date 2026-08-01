@@ -1,0 +1,24 @@
+{
+  "current_degree": {
+    "institution": "Instituto Tecnológico Superior de Calkiní",
+    "acronym": "ITESCAM",
+    "degree": "Ingeniería en Sistemas Computacionales",
+    "start_year": 2022,
+    "expected_graduation": 2027,
+    "status": "En curso"
+  },
+  "academic_focus": [
+    "Ingeniería de Software",
+    "Arquitectura de Aplicaciones",
+    "Bases de Datos Relacionales",
+    "Desarrollo Web",
+    "Desarrollo Móvil",
+    "Inteligencia Artificial",
+    "Sistemas Distribuidos"
+  ],
+  "professional_goal": "Aplicar los conocimientos adquiridos en proyectos reales de desarrollo de software e inteligencia artificial.",
+  "assistant_context": {
+    "summary": "Actualmente estudia Ingeniería en Sistemas Computacionales en el ITESCAM.",
+    "recommendation": "Cuando pregunten por su formación académica responde utilizando únicamente esta información."
+  }
+}
