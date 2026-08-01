@@ -1,0 +1,62 @@
+{
+  "id": "api-barber",
+  "name": "Barber Shop API",
+  "type": "backend",
+  "category": "REST API",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Backend Developer",
+  "team_size": 1,
+
+  "description": "API encargada de administrar reservas, clientes y productos de la aplicación Barber Shop.",
+
+  "problem": "La aplicación móvil necesitaba un backend para gestionar toda la información.",
+
+  "solution": "API REST desarrollada en Flask con conexión a PostgreSQL.",
+
+  "technologies": [
+    "Python",
+    "Flask",
+    "PostgreSQL"
+  ],
+
+  "architecture": {
+    "backend": [
+      "Flask"
+    ],
+    "database": [
+      "PostgreSQL"
+    ]
+  },
+
+  "features": [
+    "CRUD de clientes.",
+    "CRUD de citas.",
+    "CRUD de productos."
+  ],
+
+  "impact": "Permite mantener sincronizada toda la información entre la aplicación móvil y la base de datos.",
+
+  "technical_challenges": [
+    "Gestión de horarios.",
+    "Validaciones."
+  ],
+
+  "what_i_learned": [
+    "Backend REST.",
+    "Flask.",
+    "Arquitectura Cliente-Servidor."
+  ],
+
+  "future_improvements": [
+    "Pagos.",
+    "Notificaciones Push."
+  ],
+
+  "related_skills": [
+    "Python",
+    "Flask",
+    "REST"
+  ]
+}
