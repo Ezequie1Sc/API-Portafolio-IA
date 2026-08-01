@@ -1,0 +1,83 @@
+{
+  "id": "api-sigel",
+  "name": "SIGEL API",
+  "type": "backend",
+  "category": "REST API",
+  "status": "Finalizado",
+  "featured": true,
+  "production_ready": true,
+  "role": "Backend Developer",
+  "team_size": 1,
+  "estimated_time": "2 meses",
+
+  "description": "API REST desarrollada para gestionar la información del sistema SIGEL, permitiendo la comunicación entre la aplicación móvil y la base de datos.",
+
+  "problem": "La aplicación móvil necesitaba un backend centralizado para administrar usuarios, inventarios y laboratorios.",
+
+  "solution": "Se desarrolló una API REST con Flask que organiza toda la lógica de negocio y el acceso a la base de datos.",
+
+  "technologies": [
+    "Python",
+    "Flask",
+    "PostgreSQL",
+    "REST API"
+  ],
+
+  "architecture": {
+    "frontend": [],
+    "backend": [
+      "Flask",
+      "Python"
+    ],
+    "database": [
+      "PostgreSQL"
+    ],
+    "deployment": [],
+    "others": [
+      "REST"
+    ]
+  },
+
+  "features": [
+    "CRUD de usuarios",
+    "CRUD de inventario",
+    "Autenticación",
+    "Gestión de laboratorios",
+    "Respuestas JSON"
+  ],
+
+  "how_it_works": [
+    "Recibe solicitudes desde la aplicación móvil.",
+    "Procesa la lógica de negocio.",
+    "Consulta PostgreSQL.",
+    "Devuelve respuestas JSON."
+  ],
+
+  "impact": "Centraliza toda la lógica del sistema SIGEL y facilita futuras ampliaciones.",
+
+  "technical_challenges": [
+    "Diseño de endpoints.",
+    "Modelado de base de datos.",
+    "Validación de datos."
+  ],
+
+  "what_i_learned": [
+    "Diseño de APIs REST.",
+    "Arquitectura Backend.",
+    "Flask.",
+    "PostgreSQL."
+  ],
+
+  "future_improvements": [
+    "JWT.",
+    "Documentación Swagger.",
+    "FastAPI."
+  ],
+
+  "related_skills": [
+    "Python",
+    "Flask",
+    "REST API",
+    "PostgreSQL"
+  ]
+}
