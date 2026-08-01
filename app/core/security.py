@@ -6,8 +6,8 @@ def configure_cors(app):
     app.add_middleware(
         CORSMiddleware,
         allow_origins=[
-            "http://localhost:5173",
-            "https://tu-portafolio.vercel.app",
+            "https://portafolio-ia-4r2q.onrender.com",
+            "https://ezequieel-dev.vercel.app/",
             "*"
         ],
         allow_credentials=True,
