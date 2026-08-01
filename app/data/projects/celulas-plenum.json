@@ -1,0 +1,74 @@
+{
+  "id": "celulas-plenum",
+  "name": "Células Plenum",
+  "type": "web",
+  "category": "Landing Page",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Frontend Developer",
+  "team_size": 1,
+  "estimated_time": "2 semanas",
+
+  "description": "Sitio web corporativo desarrollado para promocionar productos y servicios relacionados con sistemas de climatización tipo Plenum.",
+
+  "problem": "La empresa necesitaba una presencia digital profesional para mostrar sus productos y facilitar el contacto con clientes.",
+
+  "solution": "Se desarrolló una Landing Page moderna, optimizada y responsive con información clara sobre los productos y servicios.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "backend": [],
+    "database": [],
+    "deployment": [
+      "Vercel"
+    ],
+    "others": []
+  },
+
+  "features": [
+    "Información de productos",
+    "Galería",
+    "Contacto",
+    "Diseño responsive"
+  ],
+
+  "how_it_works": [
+    "Presenta información comercial.",
+    "Permite conocer los productos.",
+    "Facilita el contacto con la empresa."
+  ],
+
+  "impact": "Mejora la imagen digital de la empresa y facilita la captación de clientes.",
+
+  "technical_challenges": [
+    "Diseño adaptable.",
+    "Optimización del rendimiento."
+  ],
+
+  "what_i_learned": [
+    "Diseño de Landing Pages.",
+    "Optimización visual.",
+    "Componentización en React."
+  ],
+
+  "future_improvements": [
+    "Catálogo dinámico.",
+    "Cotizaciones en línea."
+  ],
+
+  "related_skills": [
+    "React",
+    "Tailwind CSS"
+  ]
+}
