@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "language": "es",
+  "owner": "Orlando Ezequiel Salazar Cruz",
+  "assistant_name": "Asistente Virtual de Ezequiel Salazar",
+  "knowledge_base": {
+    "profile": true,
+    "contact": true,
+    "education": true,
+    "experience": true,
+    "projects": true,
+    "skills": true,
+    "certifications": true,
+    "faqs": true
+  },
+  "statistics": {
+    "programming_languages": 7,
+    "frontend_frameworks": 3,
+    "backend_frameworks": 2,
+    "mobile_frameworks": 1,
+    "databases": 3,
+    "certifications": 7,
+    "languages": 2
+  },
+  "default_response": "No cuento con información suficiente para responder esa pregunta.",
+  "last_updated": "2026"
+}
