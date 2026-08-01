@@ -1,0 +1,93 @@
+{
+  "id": "skillmatch",
+  "name": "SkillMatch",
+  "type": "web",
+  "category": "Inteligencia Artificial",
+  "status": "En desarrollo",
+  "featured": true,
+  "production_ready": false,
+  "role": "Desarrollador Full Stack",
+  "team_size": 1,
+  "estimated_time": "6 meses",
+
+  "description": "Plataforma inteligente para formar equipos equilibrados mediante el análisis de habilidades, intereses y perfiles de los estudiantes.",
+
+  "problem": "La creación de equipos se realizaba manualmente, generando grupos poco equilibrados.",
+
+  "solution": "Sistema que analiza habilidades y genera equipos automáticamente utilizando algoritmos e Inteligencia Artificial.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "FastAPI",
+    "Python",
+    "Gemini AI"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "TypeScript"
+    ],
+    "backend": [
+      "FastAPI",
+      "Python"
+    ],
+    "database": [
+      "PostgreSQL"
+    ],
+    "deployment": [
+      "Vercel",
+      "Render"
+    ],
+    "others": [
+      "Gemini API"
+    ]
+  },
+
+  "features": [
+    "Registro de estudiantes",
+    "Evaluación de habilidades",
+    "Formación automática de equipos",
+    "Dashboard",
+    "Análisis inteligente"
+  ],
+
+  "how_it_works": [
+    "Los estudiantes completan su perfil.",
+    "El sistema analiza habilidades.",
+    "La IA genera equipos balanceados.",
+    "El profesor revisa y confirma los resultados."
+  ],
+
+  "impact": "Optimiza la formación de equipos de trabajo reduciendo sesgos y mejorando el equilibrio entre integrantes.",
+
+  "technical_challenges": [
+    "Diseño del algoritmo de agrupación.",
+    "Integración con Gemini.",
+    "Arquitectura escalable."
+  ],
+
+  "what_i_learned": [
+    "Integración de IA.",
+    "Prompt Engineering.",
+    "Arquitectura Full Stack.",
+    "FastAPI.",
+    "React."
+  ],
+
+  "future_improvements": [
+    "Aprendizaje automático.",
+    "Recomendaciones personalizadas.",
+    "Estadísticas avanzadas."
+  ],
+
+  "related_skills": [
+    "React",
+    "FastAPI",
+    "Python",
+    "Gemini",
+    "IA"
+  ]
+}
