@@ -14,10 +14,27 @@ configure_cors(app)
 app.include_router(chat_router)
 
 
+
 @app.get("/")
 async def root():
 
     return {
         "message": "Portfolio IA API",
         "status": "running"
+    }
+
+from google import genai
+from app.core.config import settings
+
+@app.get("/test-gemini")
+async def test_gemini():
+    client = genai.Client(api_key=settings.GEMINI_API_KEY)
+
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents="Responde únicamente: OK"
+    )
+
+    return {
+        "respuesta": response.text
     }
