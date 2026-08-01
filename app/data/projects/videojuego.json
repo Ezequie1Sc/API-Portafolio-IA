@@ -1,0 +1,48 @@
+{
+  "id": "videojuego",
+  "name": "VideoJuego",
+  "type": "mobile",
+  "status": "Finalizado",
+  "featured": false,
+  "role": "Desarrollador",
+  "team_size": 1,
+  "description": "Juego arcade desarrollado en Flutter donde el jugador debe atrapar regalos mientras evita obstáculos.",
+  "problem": "Crear un juego sencillo y entretenido para dispositivos móviles que fortaleciera habilidades de programación y lógica.",
+  "solution": "Se desarrolló un videojuego arcade con sistema de colisiones, puntuación y dificultad progresiva.",
+  "technologies": [
+    "Flutter",
+    "Dart"
+  ],
+  "architecture": {
+    "frontend": [
+      "Flutter"
+    ]
+  },
+  "features": [
+    "Sistema de puntuación",
+    "Colisiones",
+    "Récords",
+    "Dificultad progresiva"
+  ],
+  "impact": "Proyecto enfocado en reforzar conocimientos sobre desarrollo de videojuegos móviles con Flutter.",
+  "github": "https://github.com/ezequieldevsc/love_apk",
+  "what_i_learned": [
+    "Manejo de animaciones.",
+    "Eventos táctiles.",
+    "Lógica de videojuegos.",
+    "Control del ciclo del juego."
+  ],
+  "technical_challenges": [
+    "Sistema de colisiones.",
+    "Optimización de animaciones."
+  ],
+  "future_improvements": [
+    "Más niveles.",
+    "Sistema de logros.",
+    "Ranking en línea."
+  ],
+  "related_skills": [
+    "Flutter",
+    "Dart"
+  ]
+}
