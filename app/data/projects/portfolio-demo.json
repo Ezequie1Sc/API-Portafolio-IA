@@ -1,0 +1,62 @@
+{
+  "id": "portfolio-demo",
+  "name": "Portafolio Demo",
+  "type": "web",
+  "category": "Portfolio",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Frontend Developer",
+  "team_size": 1,
+
+  "description": "Versión inicial de un portafolio profesional para presentar proyectos y habilidades.",
+
+  "problem": "Necesidad de contar con una plataforma para mostrar proyectos de desarrollo.",
+
+  "solution": "Se desarrolló un portafolio moderno utilizando React con un diseño limpio y adaptable.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "backend": [],
+    "database": []
+  },
+
+  "features": [
+    "Presentación personal",
+    "Listado de proyectos",
+    "Contacto",
+    "Responsive Design"
+  ],
+
+  "impact": "Permitió presentar proyectos de manera profesional.",
+
+  "technical_challenges": [
+    "Diseño UI.",
+    "Organización de componentes."
+  ],
+
+  "what_i_learned": [
+    "React.",
+    "Componentes reutilizables.",
+    "Tailwind CSS."
+  ],
+
+  "future_improvements": [
+    "Animaciones.",
+    "Integración con IA."
+  ],
+
+  "related_skills": [
+    "React",
+    "Tailwind"
+  ]
+}
