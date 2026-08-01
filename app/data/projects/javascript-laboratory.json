@@ -1,0 +1,63 @@
+{
+  "id": "javascript-laboratory",
+  "name": "JavaScript Laboratory",
+  "type": "web",
+  "category": "Educación",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Frontend Developer",
+  "team_size": 1,
+
+  "description": "Colección de ejercicios y proyectos desarrollados para practicar conceptos fundamentales y avanzados de JavaScript.",
+
+  "problem": "Consolidar conocimientos de JavaScript mediante ejercicios prácticos.",
+
+  "solution": "Se desarrolló una colección de prácticas enfocadas en lógica, DOM y programación moderna.",
+
+  "technologies": [
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ]
+  },
+
+  "features": [
+    "Manipulación del DOM",
+    "Eventos",
+    "Consumo de APIs",
+    "Algoritmos"
+  ],
+
+  "impact": "Fortaleció las bases necesarias para proyectos desarrollados posteriormente con React.",
+
+  "technical_challenges": [
+    "Optimización del código.",
+    "Resolución de algoritmos."
+  ],
+
+  "what_i_learned": [
+    "JavaScript moderno.",
+    "ES6.",
+    "Manipulación del DOM.",
+    "Consumo de APIs."
+  ],
+
+  "future_improvements": [
+    "Más ejercicios.",
+    "Documentación."
+  ],
+
+  "related_skills": [
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ]
+}
