@@ -1,0 +1,49 @@
+{
+  "id": "kermes-rockera",
+  "name": "Kermés Rockera",
+  "type": "web",
+  "category": "Evento",
+  "status": "Finalizado",
+  "featured": false,
+  "role": "Frontend Developer",
+  "team_size": 1,
+
+  "description": "Sitio web promocional desarrollado para un evento temático de una kermés escolar.",
+
+  "problem": "Se necesitaba una plataforma llamativa para promocionar el evento.",
+
+  "solution": "Landing Page moderna con diseño temático y animaciones.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "Tailwind CSS"
+    ]
+  },
+
+  "features": [
+    "Programa del evento",
+    "Galería",
+    "Información",
+    "Diseño temático"
+  ],
+
+  "impact": "Mejoró la difusión del evento mediante una experiencia visual atractiva.",
+
+  "what_i_learned": [
+    "Diseño creativo.",
+    "Animaciones.",
+    "UI."
+  ],
+
+  "future_improvements": [
+    "Venta de boletos.",
+    "Registro de asistentes."
+  ]
+}
