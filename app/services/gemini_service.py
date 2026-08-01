@@ -14,6 +14,15 @@ class GeminiService:
             api_key=settings.GEMINI_API_KEY
         )
 
+    def list_models(self):
+        """
+        Devuelve los modelos disponibles para esta API Key.
+        """
+        return [
+            model.name
+            for model in self.client.models.list()
+        ]
+
     def generate_response(self, question: str, knowledge: dict):
 
         context = json.dumps(
@@ -35,6 +44,7 @@ PREGUNTA
 """
 
         response = self.client.models.generate_content(
+            # Cambiaremos este modelo después de consultar la lista
             model="gemini-2.5-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
