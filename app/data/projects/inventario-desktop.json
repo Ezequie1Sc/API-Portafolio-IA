@@ -1,0 +1,123 @@
+{
+  "id": "inventario-desktop",
+  "name": "Sistema de Inventario Desktop",
+  "type": "desktop",
+  "category": "Sistema Administrativo",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Desktop Developer",
+  "team_size": 1,
+  "estimated_time": "2 meses",
+
+  "description": "Sistema de escritorio desarrollado para administrar el inventario de productos, controlar entradas y salidas, y generar reportes para facilitar la gestión de existencias.",
+
+  "problem": "El control del inventario se realizaba manualmente, lo que ocasionaba errores, pérdida de tiempo y poca trazabilidad de los productos.",
+
+  "solution": "Se desarrolló una aplicación de escritorio que centraliza el registro de productos, movimientos de inventario y consultas mediante una interfaz sencilla e intuitiva.",
+
+  "technologies": [
+    "C#",
+    ".NET",
+    "SQL Server",
+    "Windows Forms"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "Windows Forms"
+    ],
+    "backend": [
+      ".NET"
+    ],
+    "database": [
+      "SQL Server"
+    ],
+    "deployment": [],
+    "others": []
+  },
+
+  "features": [
+    "Registro de productos",
+    "Entradas y salidas de inventario",
+    "Actualización de existencias",
+    "Consultas rápidas",
+    "Búsqueda por producto",
+    "Reportes"
+  ],
+
+  "how_it_works": [
+    "El usuario registra los productos.",
+    "Cada movimiento actualiza automáticamente el inventario.",
+    "La información se almacena en SQL Server.",
+    "El sistema genera consultas y reportes."
+  ],
+
+  "impact": "Facilitó el control de inventario reduciendo errores manuales y permitiendo una mejor administración de los productos.",
+
+  "technical_challenges": [
+    "Diseño de la base de datos.",
+    "Sincronización de movimientos.",
+    "Validación de registros.",
+    "Optimización de consultas SQL."
+  ],
+
+  "what_i_learned": [
+    "Desarrollo de aplicaciones de escritorio.",
+    "Programación en C#.",
+    "Diseño de interfaces Windows Forms.",
+    "Conexión con SQL Server.",
+    "Modelado de bases de datos relacionales."
+  ],
+
+  "future_improvements": [
+    "Control mediante códigos QR.",
+    "Generación automática de reportes PDF.",
+    "Exportación a Excel.",
+    "Versión web.",
+    "Sincronización en la nube."
+  ],
+
+  "related_skills": [
+    "C#",
+    ".NET",
+    "SQL Server",
+    "Windows Forms"
+  ],
+
+  "github": "",
+
+  "demo": "",
+
+  "faq": [
+    {
+      "question": "¿Qué tecnologías utilizaste?",
+      "answer": "El sistema fue desarrollado utilizando C#, .NET, Windows Forms y SQL Server."
+    },
+    {
+      "question": "¿Qué problema resolvía?",
+      "answer": "Permitía administrar el inventario de manera digital reduciendo errores manuales."
+    },
+    {
+      "question": "¿Qué aprendiste desarrollándolo?",
+      "answer": "Aprendí sobre aplicaciones de escritorio, bases de datos relacionales y desarrollo con C#."
+    }
+  ],
+
+  "interview_points": {
+    "why_i_built_it": "El proyecto fue desarrollado para fortalecer mis conocimientos en aplicaciones de escritorio y administración de bases de datos.",
+
+    "design_decisions": [
+      "Utilizar Windows Forms por su rapidez de desarrollo.",
+      "Implementar SQL Server como base de datos relacional.",
+      "Separar la lógica de acceso a datos de la interfaz gráfica."
+    ],
+
+    "things_i_would_do_differently": [
+      "Migraría la aplicación a una arquitectura multicapa.",
+      "Implementaría Entity Framework.",
+      "Crearía una versión web utilizando React y FastAPI.",
+      "Agregaría autenticación basada en roles."
+    ]
+  }
+}
