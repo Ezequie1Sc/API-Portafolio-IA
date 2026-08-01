@@ -1,7 +1,69 @@
-[
+{
+  "professional_experience": [
     {
-        "company": "Freelance",
-        "role": "Full Stack Developer",
-        "description": "Desarrollo de aplicaciones web."
+      "company": "Plenumsoft",
+      "position": "Programa de Formación Dual",
+      "location": "Mérida, Yucatán",
+      "start": "2025",
+      "end": "Actualidad",
+      "description": "Participación en proyectos de desarrollo de software dentro de un entorno empresarial.",
+      "responsibilities": [
+        "Desarrollo Full Stack",
+        "Consumo de APIs REST",
+        "Trabajo en equipo",
+        "Control de versiones",
+        "Análisis de requerimientos",
+        "Diseño de soluciones",
+        "Desarrollo Backend",
+        "Desarrollo Frontend"
+      ]
     }
-]
+  ],
+
+  "technical_experience": {
+    "frontend": [
+      "React",
+      "Angular",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript"
+    ],
+
+    "backend": [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "REST APIs"
+    ],
+
+    "mobile": [
+      "Flutter",
+      "Dart"
+    ],
+
+    "database": [
+      "PostgreSQL",
+      "MySQL",
+      "SQL Server"
+    ],
+
+    "iot": [
+      "ESP32",
+      "Arduino",
+      "MicroPython"
+    ]
+  },
+
+  "experience_summary": {
+    "focus": "Desarrollo Full Stack",
+    "industries": [
+      "Educación",
+      "Servicios",
+      "Eventos",
+      "Tecnología"
+    ],
+    "preferred_role": "Backend / Full Stack Developer"
+  }
+}
