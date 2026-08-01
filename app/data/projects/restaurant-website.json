@@ -1,0 +1,74 @@
+{
+  "id": "restaurant-website",
+  "name": "Restaurant Website",
+  "type": "web",
+  "category": "Landing Page",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Frontend Developer",
+  "team_size": 1,
+
+  "description": "Sitio web moderno para promocionar un restaurante con diseño responsivo.",
+
+  "problem": "El restaurante necesitaba presencia digital para mostrar su menú y facilitar el contacto con clientes.",
+
+  "solution": "Landing Page desarrollada con React enfocada en experiencia de usuario y diseño moderno.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "backend": [],
+    "database": [],
+    "deployment": [
+      "Vercel"
+    ],
+    "others": []
+  },
+
+  "features": [
+    "Menú",
+    "Galería",
+    "Información del restaurante",
+    "Diseño responsive",
+    "Animaciones"
+  ],
+
+  "how_it_works": [
+    "Presenta información del restaurante.",
+    "Muestra el menú.",
+    "Permite contactar al negocio."
+  ],
+
+  "impact": "Mejora la presencia digital del restaurante.",
+
+  "technical_challenges": [
+    "Diseño responsive.",
+    "Optimización visual."
+  ],
+
+  "what_i_learned": [
+    "Diseño UI.",
+    "Responsive Design.",
+    "Animaciones con React."
+  ],
+
+  "future_improvements": [
+    "Reservaciones.",
+    "Pedidos en línea."
+  ],
+
+  "related_skills": [
+    "React",
+    "Tailwind CSS"
+  ]
+}
