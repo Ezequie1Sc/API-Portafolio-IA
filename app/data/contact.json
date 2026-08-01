@@ -1,0 +1,38 @@
+{
+  "full_name": "Orlando Ezequiel Salazar Cruz",
+  "preferred_name": "Ezequiel Salazar",
+  "email": "ezequielsc017@gmail.com",
+  "phone": "+52 9961071750",
+  "location": {
+    "city": "Hecelchakán",
+    "state": "Campeche",
+    "country": "México"
+  },
+  "portfolio": {
+    "name": "Portafolio Web",
+    "url": "https://ezquieldev.vercel.app"
+  },
+  "github": {
+    "username": "Ezequie1Sc",
+    "url": "https://github.com/Ezequie1Sc"
+  },
+  "linkedin": {
+    "url": "https://linkedin.com/in/ezequiel-salazar-194975340"
+  },
+  "availability": {
+    "status": "Disponible para oportunidades profesionales",
+    "remote": true,
+    "hybrid": true,
+    "onsite": true,
+    "freelance": true
+  },
+  "preferred_contact": [
+    "Correo electrónico",
+    "LinkedIn"
+  ],
+  "assistant_rules": [
+    "Si el usuario pregunta cómo contactar a Ezequiel, utiliza únicamente la información de este archivo.",
+    "Nunca inventes redes sociales adicionales.",
+    "No proporciones información personal que no esté documentada."
+  ]
+}
