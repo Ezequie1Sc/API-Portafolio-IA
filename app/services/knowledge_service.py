@@ -62,8 +62,7 @@ class KnowledgeService:
         )
 
     # =====================================
-    # Skills
-    # (Temporal hasta crear SkillService)
+    # Skills (temporal)
     # =====================================
 
     def get_skills_index(self):
@@ -79,8 +78,7 @@ class KnowledgeService:
         )
 
     # =====================================
-    # Certificaciones
-    # (Temporal hasta crear CertificationService)
+    # Certificaciones (temporal)
     # =====================================
 
     def get_certifications_index(self):
@@ -132,26 +130,31 @@ class KnowledgeService:
         context = self.get_base_context()
 
         # =====================================
-        # Proyectos
+        # PROYECTOS
         # =====================================
 
         try:
 
-            projects = self.project_service.search(
-                question
-            )
+            projects = self.project_service.search(question)
+
+            print("\n========== PROYECTOS ==========")
+            print("Pregunta:", question)
+            print("Proyectos encontrados:", len(projects))
+            print(projects)
+            print("===============================\n")
 
             if projects:
 
                 context["projects"] = projects
 
-        except Exception:
+        except Exception as e:
 
-            pass
+            print("\nERROR EN PROJECTSERVICE")
+            print(e)
+            print()
 
         # =====================================
         # Skills
-        # (Temporal)
         # =====================================
 
         try:
@@ -163,40 +166,31 @@ class KnowledgeService:
             for skill in skills_index["skills"]:
 
                 keywords = [
-
                     keyword.lower()
-
                     for keyword in skill["keywords"]
-
                 ]
 
                 if any(
-
                     keyword in question
-
                     for keyword in keywords
-
                 ):
 
                     skills.append(
-
-                        self.get_skill(
-                            skill["file"]
-                        )
-
+                        self.get_skill(skill["file"])
                     )
 
             if skills:
 
                 context["skills"] = skills
 
-        except Exception:
+        except Exception as e:
 
-            pass
+            print("\nERROR EN SKILLS")
+            print(e)
+            print()
 
         # =====================================
         # Certificaciones
-        # (Temporal)
         # =====================================
 
         try:
@@ -208,35 +202,31 @@ class KnowledgeService:
             for cert in cert_index["certifications"]:
 
                 keywords = [
-
                     keyword.lower()
-
                     for keyword in cert["keywords"]
-
                 ]
 
                 if any(
-
                     keyword in question
-
                     for keyword in keywords
-
                 ):
 
                     certifications.append(
-
-                        self.get_certification(
-                            cert["file"]
-                        )
-
+                        self.get_certification(cert["file"])
                     )
 
             if certifications:
 
                 context["certifications"] = certifications
 
-        except Exception:
+        except Exception as e:
 
-            pass
+            print("\nERROR EN CERTIFICACIONES")
+            print(e)
+            print()
+
+        print("\n========== CONTEXTO FINAL ==========")
+        print(context.keys())
+        print("====================================\n")
 
         return context
