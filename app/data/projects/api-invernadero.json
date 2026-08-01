@@ -1,0 +1,63 @@
+{
+  "id": "api-invernadero",
+  "name": "Invernadero API",
+  "type": "backend",
+  "category": "IoT",
+  "status": "Finalizado",
+  "featured": true,
+  "production_ready": true,
+  "role": "Backend Developer",
+  "team_size": 1,
+
+  "description": "Backend encargado de recibir información proveniente del ESP32 y administrar el sistema inteligente del invernadero.",
+
+  "problem": "Era necesario centralizar la comunicación entre sensores, aplicación móvil y base de datos.",
+
+  "solution": "API desarrollada en Flask que recibe información del ESP32 y administra el sistema de monitoreo.",
+
+  "technologies": [
+    "Python",
+    "Flask",
+    "ESP32",
+    "PostgreSQL"
+  ],
+
+  "architecture": {
+    "backend": [
+      "Flask"
+    ],
+    "database": [
+      "PostgreSQL"
+    ],
+    "others": [
+      "ESP32",
+      "IoT"
+    ]
+  },
+
+  "features": [
+    "Recepción de sensores.",
+    "Control automático.",
+    "Historial de datos.",
+    "Comunicación con Flutter."
+  ],
+
+  "impact": "Permite automatizar el monitoreo y control del cultivo.",
+
+  "what_i_learned": [
+    "IoT.",
+    "Comunicación ESP32.",
+    "APIs REST."
+  ],
+
+  "future_improvements": [
+    "Machine Learning.",
+    "Predicción climática."
+  ],
+
+  "related_skills": [
+    "Python",
+    "Flask",
+    "IoT"
+  ]
+}
