@@ -1,6 +1,7 @@
 import json
 
 from google import genai
+from google.genai import types
 
 from app.core.config import settings
 from app.prompts.system_prompt import SYSTEM_PROMPT
@@ -9,7 +10,6 @@ from app.prompts.system_prompt import SYSTEM_PROMPT
 class GeminiService:
 
     def __init__(self):
-
         self.client = genai.Client(
             api_key=settings.GEMINI_API_KEY
         )
@@ -36,7 +36,10 @@ PREGUNTA
 
         response = self.client.models.generate_content(
             model="gemini-2.5-flash",
-            contents=prompt
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.4
+            )
         )
 
         return response.text
