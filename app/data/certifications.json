@@ -1,0 +1,44 @@
+{
+  "certifications": [
+    {
+      "name": "Responsive Web Design",
+      "issuer": "freeCodeCamp",
+      "hours": 300,
+      "area": "Frontend"
+    },
+    {
+      "name": "Foundational C# with Microsoft",
+      "issuer": "Microsoft",
+      "area": "Programación"
+    },
+    {
+      "name": "Python Essentials",
+      "issuer": "Cisco Networking Academy",
+      "area": "Python"
+    },
+    {
+      "name": "Advanced SQL",
+      "issuer": "Kaggle",
+      "area": "Bases de Datos"
+    },
+    {
+      "name": "Introduction to Cybersecurity",
+      "issuer": "Cisco Networking Academy",
+      "area": "Ciberseguridad"
+    },
+    {
+      "name": "Professional Communication",
+      "issuer": "LinkedIn Learning",
+      "area": "Habilidades Blandas"
+    },
+    {
+      "name": "English Level B1",
+      "issuer": "Instituto Tecnológico Superior de Calkiní",
+      "area": "Idiomas"
+    }
+  ],
+
+  "assistant_context": {
+    "response_rule": "Si preguntan por certificaciones, enumera primero las más relevantes para desarrollo de software."
+  }
+}
