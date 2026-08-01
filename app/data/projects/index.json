@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "id": "invernadero-mobile",
+      "name": "Invernadero Mobile",
+      "file": "invernadero-mobile.json",
+      "category": "mobile",
+      "featured": true,
+      "keywords": [
+        "invernadero",
+        "iot",
+        "esp32",
+        "flutter",
+        "python",
+        "flask",
+        "postgresql",
+        "riego",
+        "sensores"
+      ]
+    },
+    {
+      "id": "sigel-mobile",
+      "name": "SIGEL ITC Mobile",
+      "file": "sigel-mobile.json",
+      "category": "mobile",
+      "featured": true,
+      "keywords": [
+        "sigel",
+        "inventario",
+        "laboratorio",
+        "flutter",
+        "postgresql",
+        "flask",
+        "python"
+      ]
+    },
+    {
+      "id": "barber-shop-mobile",
+      "name": "Barber Shop App",
+      "file": "barber-shop-mobile.json",
+      "category": "mobile",
+      "featured": true,
+      "keywords": [
+        "barberia",
+        "reservas",
+        "flutter",
+        "agenda",
+        "clientes",
+        "productos"
+      ]
+    },
+    {
+      "id": "videojuego",
+      "name": "VideoJuego",
+      "file": "videojuego.json",
+      "category": "mobile",
+      "featured": false,
+      "keywords": [
+        "game",
+        "flutter",
+        "dart",
+        "videojuego",
+        "arcade"
+      ]
+    }
+  ]
+}
