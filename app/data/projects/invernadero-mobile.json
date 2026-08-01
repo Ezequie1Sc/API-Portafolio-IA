@@ -1,0 +1,75 @@
+{
+  "id": "invernadero-mobile",
+  "name": "Invernadero Mobile",
+  "type": "mobile",
+  "status": "Finalizado",
+  "featured": true,
+  "role": "Desarrollador Full Stack",
+  "team_size": 1,
+  "description": "Sistema móvil para monitoreo de invernaderos con visualización en tiempo real y control automático del sistema de riego.",
+  "problem": "Los agricultores perdían cosechas debido a la falta de monitoreo continuo y un sistema de riego eficiente.",
+  "solution": "Se desarrolló una solución IoT conectada a una aplicación móvil que monitorea sensores y automatiza el riego según las condiciones del cultivo.",
+  "technologies": [
+    "Flutter",
+    "Dart",
+    "Python",
+    "Flask",
+    "PostgreSQL",
+    "ESP32"
+  ],
+  "architecture": {
+    "frontend": [
+      "Flutter"
+    ],
+    "backend": [
+      "Flask",
+      "Python"
+    ],
+    "database": [
+      "PostgreSQL"
+    ],
+    "iot": [
+      "ESP32",
+      "Sensores"
+    ]
+  },
+  "features": [
+    "Monitoreo en tiempo real",
+    "Riego automático",
+    "Alertas",
+    "Visualización de datos",
+    "Control remoto"
+  ],
+  "how_it_works": [
+    "Los sensores ESP32 recopilan información del ambiente.",
+    "Los datos son enviados al servidor.",
+    "La API procesa la información.",
+    "La aplicación muestra los datos en tiempo real.",
+    "Cuando es necesario se activa automáticamente el riego."
+  ],
+  "impact": "Reduce el consumo de agua y mejora la producción mediante decisiones automáticas basadas en sensores.",
+  "github": "https://github.com/ezequieldevsc/ServerInvernadero",
+  "what_i_learned": [
+    "Integración IoT con aplicaciones móviles.",
+    "Consumo de APIs REST.",
+    "Arquitectura cliente-servidor.",
+    "Procesamiento de datos en tiempo real."
+  ],
+  "technical_challenges": [
+    "Comunicación entre sensores y servidor.",
+    "Sincronización de datos.",
+    "Optimización del consumo de recursos."
+  ],
+  "future_improvements": [
+    "Predicción mediante IA.",
+    "Gráficas históricas.",
+    "Notificaciones inteligentes."
+  ],
+  "related_skills": [
+    "Flutter",
+    "Python",
+    "IoT",
+    "Flask",
+    "PostgreSQL"
+  ]
+}
