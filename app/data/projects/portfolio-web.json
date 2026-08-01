@@ -1,0 +1,117 @@
+{
+  "id": "portfolio-web",
+  "name": "Portfolio Web IA",
+  "type": "web",
+  "category": "Portfolio",
+  "status": "En desarrollo",
+  "featured": true,
+  "production_ready": false,
+  "role": "Full Stack Developer",
+  "team_size": 1,
+  "estimated_time": "Proyecto continuo",
+
+  "description": "Portafolio profesional desarrollado para presentar proyectos, certificaciones, habilidades y un asistente inteligente impulsado por IA.",
+
+  "problem": "Los portafolios tradicionales muestran información estática y limitan la interacción con reclutadores.",
+
+  "solution": "Desarrollo de un portafolio moderno con React, FastAPI y Gemini que permite consultar información mediante un asistente virtual especializado.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "FastAPI",
+    "Python",
+    "Gemini AI",
+    "Render",
+    "Vercel"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "backend": [
+      "FastAPI",
+      "Python"
+    ],
+    "database": [],
+    "deployment": [
+      "Vercel",
+      "Render"
+    ],
+    "others": [
+      "Gemini API"
+    ]
+  },
+
+  "features": [
+    "Presentación profesional",
+    "Galería de proyectos",
+    "Certificaciones",
+    "Experiencia",
+    "Asistente con IA",
+    "Diseño responsive",
+    "Modo oscuro"
+  ],
+
+  "how_it_works": [
+    "El usuario consulta información mediante un chat.",
+    "FastAPI procesa la solicitud.",
+    "Se carga únicamente el conocimiento relevante.",
+    "Gemini genera una respuesta basada en los archivos JSON."
+  ],
+
+  "impact": "Transforma un portafolio tradicional en una experiencia interactiva enfocada en reclutadores y entrevistas técnicas.",
+
+  "technical_challenges": [
+    "Diseñar una arquitectura modular.",
+    "Optimizar el consumo de tokens.",
+    "Integrar React, FastAPI y Gemini.",
+    "Construir una base de conocimiento escalable."
+  ],
+
+  "what_i_learned": [
+    "Arquitectura Full Stack.",
+    "Integración de LLMs.",
+    "Prompt Engineering.",
+    "Diseño de APIs.",
+    "Optimización de contexto para IA.",
+    "Buenas prácticas en React."
+  ],
+
+  "future_improvements": [
+    "Streaming de respuestas.",
+    "Memoria conversacional.",
+    "Soporte multilingüe.",
+    "Búsqueda semántica (RAG).",
+    "Panel de administración."
+  ],
+
+  "related_skills": [
+    "React",
+    "FastAPI",
+    "Python",
+    "Gemini",
+    "Prompt Engineering",
+    "TypeScript"
+  ],
+
+  "interview_points": {
+    "why_i_built_it": "Quise crear un portafolio que demostrara no solo mis proyectos, sino también mi capacidad para diseñar e integrar soluciones de Inteligencia Artificial en una arquitectura Full Stack.",
+    "design_decisions": [
+      "Separar frontend y backend.",
+      "Utilizar FastAPI por su rendimiento y simplicidad.",
+      "Organizar la información en archivos JSON independientes para reducir el contexto enviado al modelo.",
+      "Consumir Gemini mediante una capa de servicios desacoplada."
+    ],
+    "things_i_would_do_differently": [
+      "Incorporar autenticación.",
+      "Agregar una base vectorial para búsqueda semántica.",
+      "Implementar pruebas automatizadas.",
+      "Containerizar la aplicación con Docker."
+    ]
+  }
+}
