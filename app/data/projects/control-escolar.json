@@ -1,0 +1,67 @@
+{
+  "id": "control-escolar",
+  "name": "Sistema de Control Escolar",
+  "type": "desktop",
+  "category": "Sistema Administrativo",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Desktop Developer",
+  "team_size": 1,
+
+  "description": "Sistema desarrollado para administrar alumnos, docentes, materias y calificaciones.",
+
+  "problem": "La institución necesitaba digitalizar el control escolar.",
+
+  "solution": "Aplicación de escritorio para gestionar información académica de manera centralizada.",
+
+  "technologies": [
+    "C#",
+    ".NET",
+    "SQL Server"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "Windows Forms"
+    ],
+    "backend": [
+      ".NET"
+    ],
+    "database": [
+      "SQL Server"
+    ]
+  },
+
+  "features": [
+    "Gestión de alumnos.",
+    "Materias.",
+    "Calificaciones.",
+    "Reportes."
+  ],
+
+  "impact": "Facilita la administración académica y reduce errores en el registro de información.",
+
+  "technical_challenges": [
+    "Modelado de relaciones.",
+    "Reportes."
+  ],
+
+  "what_i_learned": [
+    "C#.",
+    "SQL Server.",
+    "Aplicaciones Desktop."
+  ],
+
+  "future_improvements": [
+    "Versión web.",
+    "Portal para alumnos.",
+    "Notificaciones."
+  ],
+
+  "related_skills": [
+    "C#",
+    ".NET",
+    "SQL Server"
+  ]
+}
