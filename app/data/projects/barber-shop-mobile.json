@@ -1,0 +1,57 @@
+{
+  "id": "barber-shop-mobile",
+  "name": "Barber Shop App",
+  "type": "mobile",
+  "status": "Finalizado",
+  "featured": true,
+  "role": "Desarrollador Full Stack",
+  "team_size": 1,
+  "description": "Aplicación móvil para administrar reservas, clientes y productos de una barbería.",
+  "problem": "Las barberías tenían dificultades para administrar citas y ventas de manera organizada.",
+  "solution": "Aplicación móvil que permite reservar citas, administrar clientes y vender productos.",
+  "technologies": [
+    "Flutter",
+    "Python",
+    "Flask",
+    "PostgreSQL"
+  ],
+  "architecture": {
+    "frontend": [
+      "Flutter"
+    ],
+    "backend": [
+      "Flask"
+    ],
+    "database": [
+      "PostgreSQL"
+    ]
+  },
+  "features": [
+    "Reservas",
+    "Agenda",
+    "Productos",
+    "Clientes",
+    "Notificaciones"
+  ],
+  "impact": "Digitaliza completamente el proceso de reservaciones de una barbería.",
+  "github": "https://github.com/ezequieldevsc/BarberApk",
+  "what_i_learned": [
+    "Manejo de disponibilidad.",
+    "Diseño de aplicaciones comerciales.",
+    "Arquitectura móvil."
+  ],
+  "technical_challenges": [
+    "Evitar conflictos de horarios.",
+    "Sincronización de reservas."
+  ],
+  "future_improvements": [
+    "Pagos en línea.",
+    "Chat.",
+    "Estadísticas."
+  ],
+  "related_skills": [
+    "Flutter",
+    "Flask",
+    "PostgreSQL"
+  ]
+}
