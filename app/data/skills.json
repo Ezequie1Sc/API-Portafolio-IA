@@ -1,12 +1,186 @@
-[
-    "React",
-    "TypeScript",
-    "Java",
-    "Spring Boot",
-    "Python",
-    "FastAPI",
-    "Node.js",
-    "MySQL",
-    "Docker",
-    "Git"
-]
+{
+  "frontend": {
+    "description": "Desarrollo de interfaces modernas, responsivas y orientadas a la experiencia del usuario.",
+    "technologies": [
+      {
+        "name": "React",
+        "level": "Avanzado",
+        "experience": "Desarrollo de aplicaciones SPA utilizando componentes reutilizables y consumo de APIs REST.",
+        "used_in": [
+          "SkillMatch",
+          "Portafolio Personal",
+          "Kermés Rockera 2026"
+        ],
+        "concepts": [
+          "Componentes",
+          "Hooks",
+          "React Router",
+          "Consumo de APIs",
+          "Estado",
+          "Props"
+        ]
+      },
+      {
+        "name": "Angular",
+        "level": "Intermedio",
+        "experience": "Desarrollo de aplicaciones web empresariales.",
+        "used_in": [
+          "Proyectos académicos",
+          "Plenumsoft"
+        ]
+      },
+      {
+        "name": "HTML5",
+        "level": "Avanzado"
+      },
+      {
+        "name": "CSS3",
+        "level": "Avanzado"
+      },
+      {
+        "name": "Tailwind CSS",
+        "level": "Avanzado",
+        "used_in": [
+          "SkillMatch",
+          "Portafolio",
+          "Landing Pages"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "level": "Avanzado"
+      },
+      {
+        "name": "TypeScript",
+        "level": "Avanzado"
+      }
+    ]
+  },
+
+  "backend": {
+    "description": "Desarrollo de APIs REST y lógica de negocio.",
+    "technologies": [
+      {
+        "name": "Python",
+        "level": "Avanzado",
+        "used_in": [
+          "FastAPI",
+          "Flask",
+          "IA",
+          "Automatización"
+        ]
+      },
+      {
+        "name": "FastAPI",
+        "level": "Avanzado",
+        "experience": "Desarrollo de APIs REST modernas con arquitectura organizada.",
+        "features": [
+          "Pydantic",
+          "JWT",
+          "Swagger",
+          "Variables de entorno",
+          "Render",
+          "Arquitectura por capas"
+        ]
+      },
+      {
+        "name": "Flask",
+        "level": "Intermedio"
+      }
+    ]
+  },
+
+  "mobile": {
+    "description": "Desarrollo de aplicaciones móviles multiplataforma.",
+    "technologies": [
+      {
+        "name": "Flutter",
+        "level": "Intermedio",
+        "used_in": [
+          "SIGEL ITC",
+          "Sistema Barbería"
+        ]
+      },
+      {
+        "name": "Dart",
+        "level": "Intermedio"
+      },
+      {
+        "name": "Android Studio",
+        "level": "Intermedio"
+      }
+    ]
+  },
+
+  "database": {
+    "technologies": [
+      {
+        "name": "PostgreSQL",
+        "level": "Avanzado"
+      },
+      {
+        "name": "MySQL",
+        "level": "Intermedio"
+      },
+      {
+        "name": "SQL Server",
+        "level": "Intermedio"
+      },
+      {
+        "name": "SQL",
+        "level": "Avanzado"
+      }
+    ]
+  },
+
+  "iot": {
+    "technologies": [
+      {
+        "name": "ESP32",
+        "level": "Intermedio"
+      },
+      {
+        "name": "Arduino",
+        "level": "Intermedio"
+      },
+      {
+        "name": "MicroPython",
+        "level": "Intermedio"
+      }
+    ]
+  },
+
+  "version_control": {
+    "tools": [
+      "Git",
+      "GitHub"
+    ]
+  },
+
+  "development_tools": [
+    "Visual Studio Code",
+    "Visual Studio",
+    "Postman",
+    "Render",
+    "Vercel"
+  ],
+
+  "artificial_intelligence": {
+    "experience": [
+      "Integración de Gemini",
+      "Chatbots",
+      "Prompt Engineering",
+      "APIs de IA"
+    ]
+  },
+
+  "soft_skills": [
+    "Trabajo en equipo",
+    "Comunicación",
+    "Pensamiento analítico",
+    "Aprendizaje continuo",
+    "Resolución de problemas",
+    "Responsabilidad",
+    "Adaptabilidad"
+  ]
+}
