@@ -1,0 +1,62 @@
+{
+  "id": "sigel-mobile",
+  "name": "SIGEL ITC Mobile",
+  "type": "mobile",
+  "status": "Finalizado",
+  "featured": true,
+  "role": "Desarrollador Full Stack",
+  "team_size": 1,
+  "description": "Aplicación móvil para la gestión académica e inventario de laboratorios.",
+  "problem": "La gestión académica y de inventarios se realizaba de forma manual, generando errores y pérdida de tiempo.",
+  "solution": "Aplicación móvil con backend en Flask que centraliza inventarios, tareas, laboratorios y notificaciones.",
+  "technologies": [
+    "Flutter",
+    "Dart",
+    "Flask",
+    "Python",
+    "PostgreSQL"
+  ],
+  "architecture": {
+    "frontend": [
+      "Flutter"
+    ],
+    "backend": [
+      "Flask",
+      "Python"
+    ],
+    "database": [
+      "PostgreSQL"
+    ]
+  },
+  "features": [
+    "Inventario",
+    "Entrega de tareas",
+    "Notificaciones",
+    "Gestión de laboratorios",
+    "Usuarios"
+  ],
+  "impact": "Optimiza la administración académica y reduce errores en el control del inventario.",
+  "github": "https://github.com/ezequieldevsc/SIGEL",
+  "what_i_learned": [
+    "Arquitectura móvil.",
+    "Diseño de APIs.",
+    "Autenticación.",
+    "Integración Flutter-Flask."
+  ],
+  "technical_challenges": [
+    "Modelado de base de datos.",
+    "Sincronización.",
+    "Escalabilidad."
+  ],
+  "future_improvements": [
+    "Panel administrativo web.",
+    "Modo offline.",
+    "Integración con IA."
+  ],
+  "related_skills": [
+    "Flutter",
+    "Python",
+    "Flask",
+    "PostgreSQL"
+  ]
+}
