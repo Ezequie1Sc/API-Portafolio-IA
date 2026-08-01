@@ -1,0 +1,54 @@
+{
+  "id": "climatizacion-web",
+  "name": "Climatización Web",
+  "type": "web",
+  "category": "Landing Page",
+  "status": "Finalizado",
+  "featured": false,
+  "role": "Frontend Developer",
+  "team_size": 1,
+
+  "description": "Sitio web para promocionar servicios de climatización y mantenimiento.",
+
+  "problem": "La empresa necesitaba una página profesional para mostrar sus servicios.",
+
+  "solution": "Landing Page moderna enfocada en conversión de clientes.",
+
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "Tailwind CSS"
+    ]
+  },
+
+  "features": [
+    "Servicios",
+    "Galería",
+    "Contacto",
+    "Información empresarial"
+  ],
+
+  "impact": "Incrementa la presencia digital de la empresa.",
+
+  "what_i_learned": [
+    "Diseño comercial.",
+    "Optimización de UX.",
+    "Landing Pages."
+  ],
+
+  "future_improvements": [
+    "Cotizaciones en línea.",
+    "Agenda de servicios."
+  ],
+
+  "related_skills": [
+    "React",
+    "Tailwind CSS"
+  ]
+}
