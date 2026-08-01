@@ -1,0 +1,84 @@
+{
+  "id": "",
+
+  "name": "",
+
+  "category": "",
+
+  "type": "",
+
+  "status": "",
+
+  "featured": false,
+
+  "production_ready": false,
+
+  "role": "",
+
+  "team_size": 1,
+
+  "estimated_time": "",
+
+  "description": "",
+
+  "problem": "",
+
+  "solution": "",
+
+  "impact": "",
+
+  "technologies": [],
+
+  "architecture": {
+    "frontend": [],
+    "backend": [],
+    "database": [],
+    "deployment": [],
+    "others": []
+  },
+
+  "features": [],
+
+  "how_it_works": [],
+
+  "technical_challenges": [],
+
+  "what_i_learned": [],
+
+  "future_improvements": [],
+
+  "related_skills": [],
+
+  "github": "",
+
+  "demo": "",
+
+  "images": [],
+
+  "difficulty": {
+    "overall": "",
+    "frontend": "",
+    "backend": "",
+    "database": ""
+  },
+
+  "interview": {
+    "elevator_pitch": "",
+    "main_problem": "",
+    "solution_summary": "",
+    "biggest_challenge": "",
+    "why_this_stack": "",
+    "favorite_part": "",
+    "what_would_i_improve": "",
+    "what_i_am_proud_of": "",
+    "architecture_explanation": ""
+  },
+
+  "faq": [],
+
+  "recruiter": {
+    "keywords": [],
+    "strengths": [],
+    "soft_skills": []
+  }
+}
