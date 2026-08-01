@@ -21,7 +21,9 @@ async def chat(request: ChatRequest):
 
     try:
 
-        knowledge = knowledge_service.get_context()
+        knowledge = knowledge_service.search(
+            request.message
+        )
 
         response = gemini_service.generate_response(
             request.message,
