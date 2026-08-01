@@ -1,0 +1,57 @@
+{
+  "id": "atmosfera",
+  "name": "Atmósfera",
+  "type": "web",
+  "category": "Landing Page",
+  "status": "Finalizado",
+  "featured": false,
+  "production_ready": true,
+  "role": "Frontend Developer",
+  "team_size": 1,
+
+  "description": "Landing Page desarrollada para promocionar servicios relacionados con climatización y ambientes comerciales.",
+
+  "problem": "La empresa necesitaba una página moderna para fortalecer su presencia digital.",
+
+  "solution": "Sitio web con diseño atractivo, responsive y optimizado para mostrar servicios.",
+
+  "technologies": [
+    "React",
+    "Tailwind CSS",
+    "TypeScript"
+  ],
+
+  "architecture": {
+    "frontend": [
+      "React",
+      "Tailwind CSS"
+    ]
+  },
+
+  "features": [
+    "Información de servicios",
+    "Galería",
+    "Contacto"
+  ],
+
+  "impact": "Incrementa la presencia digital de la empresa.",
+
+  "technical_challenges": [
+    "Diseño adaptable."
+  ],
+
+  "what_i_learned": [
+    "Diseño comercial.",
+    "Optimización UI."
+  ],
+
+  "future_improvements": [
+    "Formulario inteligente.",
+    "Panel administrativo."
+  ],
+
+  "related_skills": [
+    "React",
+    "Tailwind"
+  ]
+}
