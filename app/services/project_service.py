@@ -26,307 +26,178 @@ class ProjectService:
 
             return json.load(file)
 
-    def _all_projects(self):
-
-        projects = []
-
-        for item in self.index["projects"]:
-
-            try:
-
-                projects.append(
-                    self._load_json(item["file"])
-                )
-
-            except Exception:
-
-                pass
-
-        return projects
-
     # ===================================================
-    # Búsquedas
-    # ===================================================
-
-    def search_by_name(self, question: str):
-
-        question = question.lower()
-
-        results = []
-
-        for project in self._all_projects():
-
-            if project["name"].lower() in question:
-
-                results.append(project)
-
-        return results
-
-    def search_by_keywords(self, question: str):
-
-        question = question.lower()
-
-        results = []
-
-        for project in self._all_projects():
-
-            recruiter = project.get("recruiter", {})
-
-            keywords = recruiter.get("keywords", [])
-
-            keywords = [
-                keyword.lower()
-                for keyword in keywords
-            ]
-
-            if any(keyword in question for keyword in keywords):
-
-                results.append(project)
-
-        return results
-
-    def search_by_technology(self, question: str):
-
-        question = question.lower()
-
-        results = []
-
-        for project in self._all_projects():
-
-            technologies = [
-
-                tech.lower()
-
-                for tech in project.get(
-                    "technologies",
-                    []
-                )
-
-            ]
-
-            if any(
-                tech in question
-                for tech in technologies
-            ):
-
-                results.append(project)
-
-        return results
-
-    def search_by_category(self, question: str):
-
-        question = question.lower()
-
-        results = []
-
-        for project in self._all_projects():
-
-            category = project.get(
-                "category",
-                ""
-            ).lower()
-
-            if category in question:
-
-                results.append(project)
-
-        return results
-
-    def search_by_type(self, question: str):
-
-        question = question.lower()
-
-        results = []
-
-        for project in self._all_projects():
-
-            project_type = project.get(
-                "type",
-                ""
-            ).lower()
-
-            if project_type in question:
-
-                results.append(project)
-
-        return results
-
-    def search_featured(self):
-
-        results = []
-
-        for project in self._all_projects():
-
-            if project.get(
-                "featured",
-                False
-            ):
-
-                results.append(project)
-
-        return results
-
-    def search_production(self):
-
-        results = []
-
-        for project in self._all_projects():
-
-            if project.get(
-                "production_ready",
-                False
-            ):
-
-                results.append(project)
-
-        return results
-
-    def search_difficulty(self, level):
-
-        results = []
-
-        for project in self._all_projects():
-
-            difficulty = project.get(
-                "difficulty",
-                {}
-            ).get(
-                "overall",
-                ""
-            )
-
-            if difficulty.lower() == level.lower():
-
-                results.append(project)
-
-        return results
-
-    # ===================================================
-    # Motor inteligente
+    # Buscar proyectos
     # ===================================================
 
     def search(self, question: str):
 
-        question = question.lower()
+        question = question.lower().strip()
 
-        context = []
+        candidates = []
 
-        # -----------------------------
-        # Nombre
-        # -----------------------------
+        # ==========================================
+        # Buscar coincidencias en el INDEX
+        # ==========================================
 
-        context.extend(
-            self.search_by_name(question)
+        for item in self.index["projects"]:
+
+            score = 0
+
+            # -----------------------------
+            # Nombre
+            # -----------------------------
+
+            if item["name"].lower() in question:
+
+                score += 10
+
+            # -----------------------------
+            # ID
+            # -----------------------------
+
+            if item["id"].lower() in question:
+
+                score += 10
+
+            # -----------------------------
+            # Categoría
+            # -----------------------------
+
+            if item.get(
+                "category",
+                ""
+            ).lower() in question:
+
+                score += 3
+
+            # -----------------------------
+            # Keywords
+            # -----------------------------
+
+            for keyword in item.get(
+                "keywords",
+                []
+            ):
+
+                if keyword.lower() in question:
+
+                    score += 2
+
+            # -----------------------------
+            # Destacados
+            # -----------------------------
+
+            if item.get(
+                "featured",
+                False
+            ):
+
+                if any(
+
+                    word in question
+
+                    for word in [
+
+                        "importante",
+
+                        "importantes",
+
+                        "principal",
+
+                        "principales",
+
+                        "mejor",
+
+                        "mejores",
+
+                        "destacado",
+
+                        "destacados"
+
+                    ]
+
+                ):
+
+                    score += 5
+
+            # -----------------------------
+            # Encontró coincidencias
+            # -----------------------------
+
+            if score > 0:
+
+                candidates.append({
+
+                    "file": item["file"],
+
+                    "score": score
+
+                })
+
+        # ==========================================
+        # Ordenar por relevancia
+        # ==========================================
+
+        candidates.sort(
+
+            key=lambda item: item["score"],
+
+            reverse=True
+
         )
 
-        # -----------------------------
-        # Keywords
-        # -----------------------------
-
-        context.extend(
-            self.search_by_keywords(question)
-        )
-
-        # -----------------------------
-        # Tecnologías
-        # -----------------------------
-
-        context.extend(
-            self.search_by_technology(question)
-        )
-
-        # -----------------------------
-        # Categorías
-        # -----------------------------
-
-        context.extend(
-            self.search_by_category(question)
-        )
-
-        # -----------------------------
-        # Tipo
-        # -----------------------------
-
-        context.extend(
-            self.search_by_type(question)
-        )
-
-        # -----------------------------
-        # Destacados
-        # -----------------------------
-
-        if (
-
-            "importante" in question
-
-            or
-
-            "mejor" in question
-
-            or
-
-            "destacado" in question
-
-            or
-
-            "principal" in question
-
-        ):
-
-            context.extend(
-                self.search_featured()
-            )
-
-        # -----------------------------
-        # Producción
-        # -----------------------------
-
-        if (
-
-            "producción" in question
-
-            or
-
-            "production" in question
-
-        ):
-
-            context.extend(
-                self.search_production()
-            )
-
-        # -----------------------------
-        # Complejidad
-        # -----------------------------
-
-        if (
-
-            "difícil" in question
-
-            or
-
-            "complejo" in question
-
-        ):
-
-            context.extend(
-                self.search_difficulty(
-                    "Alta"
-                )
-            )
-
-        # ===================================================
+        # ==========================================
         # Eliminar duplicados
-        # ===================================================
+        # ==========================================
 
-        unique = {}
+        files = []
 
-        for project in context:
+        used = set()
 
-            unique[
-                project["id"]
-            ] = project
+        for candidate in candidates:
 
-        return list(
-            unique.values()
-        )
+            if candidate["file"] in used:
+
+                continue
+
+            used.add(candidate["file"])
+
+            files.append(
+
+                candidate["file"]
+
+            )
+
+        # ==========================================
+        # Cargar únicamente los proyectos encontrados
+        # ==========================================
+
+        projects = []
+
+        for filename in files:
+
+            try:
+
+                projects.append(
+
+                    self._load_json(filename)
+
+                )
+
+            except Exception as e:
+
+                print(
+                    f"Error cargando {filename}: {e}"
+                )
+
+        # ==========================================
+        # Debug
+        # ==========================================
+
+        print("\n========== PROJECT SERVICE ==========")
+        print("Pregunta:", question)
+        print("Archivos encontrados:", files)
+        print("=====================================\n")
+
+        return projects
