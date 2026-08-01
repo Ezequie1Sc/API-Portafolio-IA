@@ -1,6 +1,145 @@
 {
   "projects": [
     {
+      "id": "skillmatch",
+      "name": "SkillMatch",
+      "file": "skillmatch.json",
+      "category": "web",
+      "featured": true,
+      "keywords": [
+        "skillmatch",
+        "ia",
+        "inteligencia artificial",
+        "gemini",
+        "react",
+        "fastapi",
+        "python",
+        "equipos",
+        "estudiantes",
+        "trabajo colaborativo"
+      ]
+    },
+    {
+      "id": "portfolio-web",
+      "name": "Portfolio Web",
+      "file": "portfolio-web.json",
+      "category": "web",
+      "featured": true,
+      "keywords": [
+        "portfolio",
+        "portafolio",
+        "react",
+        "typescript",
+        "frontend",
+        "desarrollador",
+        "personal"
+      ]
+    },
+    {
+      "id": "portfolio-demo",
+      "name": "Portfolio Demo",
+      "file": "portfolio-demo.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "portfolio demo",
+        "demo",
+        "react",
+        "frontend"
+      ]
+    },
+    {
+      "id": "restaurant-website",
+      "name": "Restaurant Website",
+      "file": "restaurant-website.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "restaurant",
+        "restaurante",
+        "web",
+        "react",
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": "climatizacion-web",
+      "name": "Climatización Web",
+      "file": "climatizacion-web.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "climatizacion",
+        "aire acondicionado",
+        "empresa",
+        "react"
+      ]
+    },
+    {
+      "id": "atmosfera",
+      "name": "Atmosfera",
+      "file": "atmosfera.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "atmosfera",
+        "web",
+        "react"
+      ]
+    },
+    {
+      "id": "celulas-plenum",
+      "name": "Células Plenum",
+      "file": "celulas-plenum.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "celulas",
+        "plenum",
+        "web"
+      ]
+    },
+    {
+      "id": "kermes-rockera",
+      "name": "Kermés Rockera",
+      "file": "kermes-rockera.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "kermes",
+        "evento",
+        "react"
+      ]
+    },
+    {
+      "id": "javascript-laboratory",
+      "name": "JavaScript Laboratory",
+      "file": "javascript-laboratory.json",
+      "category": "web",
+      "featured": false,
+      "keywords": [
+        "javascript",
+        "laboratorio",
+        "js"
+      ]
+    },
+    {
+      "id": "sigel-mobile",
+      "name": "SIGEL Mobile",
+      "file": "sigel-mobile.json",
+      "category": "mobile",
+      "featured": true,
+      "keywords": [
+        "sigel",
+        "flutter",
+        "inventario",
+        "laboratorio",
+        "movil",
+        "app"
+      ]
+    },
+    {
       "id": "invernadero-mobile",
       "name": "Invernadero Mobile",
       "file": "invernadero-mobile.json",
@@ -8,45 +147,25 @@
       "featured": true,
       "keywords": [
         "invernadero",
+        "flutter",
         "iot",
         "esp32",
-        "flutter",
-        "python",
-        "flask",
-        "postgresql",
-        "riego",
-        "sensores"
-      ]
-    },
-    {
-      "id": "sigel-mobile",
-      "name": "SIGEL ITC Mobile",
-      "file": "sigel-mobile.json",
-      "category": "mobile",
-      "featured": true,
-      "keywords": [
-        "sigel",
-        "inventario",
-        "laboratorio",
-        "flutter",
-        "postgresql",
-        "flask",
-        "python"
+        "sensores",
+        "riego"
       ]
     },
     {
       "id": "barber-shop-mobile",
-      "name": "Barber Shop App",
+      "name": "Barber Shop Mobile",
       "file": "barber-shop-mobile.json",
       "category": "mobile",
       "featured": true,
       "keywords": [
         "barberia",
-        "reservas",
+        "barber",
         "flutter",
-        "agenda",
-        "clientes",
-        "productos"
+        "citas",
+        "reservas"
       ]
     },
     {
@@ -56,11 +175,96 @@
       "category": "mobile",
       "featured": false,
       "keywords": [
+        "videojuego",
+        "juego",
         "game",
         "flutter",
         "dart",
-        "videojuego",
         "arcade"
+      ]
+    },
+    {
+      "id": "api-sigel",
+      "name": "SIGEL API",
+      "file": "api-sigel.json",
+      "category": "backend",
+      "featured": true,
+      "keywords": [
+        "api",
+        "backend",
+        "flask",
+        "python",
+        "postgresql",
+        "sigel",
+        "rest"
+      ]
+    },
+    {
+      "id": "api-invernadero",
+      "name": "Invernadero API",
+      "file": "api-invernadero.json",
+      "category": "backend",
+      "featured": true,
+      "keywords": [
+        "api",
+        "backend",
+        "python",
+        "flask",
+        "iot",
+        "esp32"
+      ]
+    },
+    {
+      "id": "api-barber",
+      "name": "Barber API",
+      "file": "api-barber.json",
+      "category": "backend",
+      "featured": false,
+      "keywords": [
+        "api",
+        "backend",
+        "python",
+        "flask",
+        "barberia"
+      ]
+    },
+    {
+      "id": "barberia-desktop",
+      "name": "Barbería Desktop",
+      "file": "barberia-desktop.json",
+      "category": "desktop",
+      "featured": false,
+      "keywords": [
+        "desktop",
+        "c#",
+        "windows forms",
+        "barberia"
+      ]
+    },
+    {
+      "id": "control-escolar",
+      "name": "Control Escolar",
+      "file": "control-escolar.json",
+      "category": "desktop",
+      "featured": false,
+      "keywords": [
+        "control escolar",
+        "c#",
+        "sql server",
+        "desktop"
+      ]
+    },
+    {
+      "id": "inventario-desktop",
+      "name": "Inventario Desktop",
+      "file": "inventario-desktop.json",
+      "category": "desktop",
+      "featured": false,
+      "keywords": [
+        "inventario",
+        "desktop",
+        "sql server",
+        "c#"
       ]
     }
   ]
