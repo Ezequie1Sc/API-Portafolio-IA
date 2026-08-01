@@ -1,44 +1,382 @@
 {
   "certifications": [
     {
-      "name": "Responsive Web Design",
+      "id": 1,
+      "name": "Responsive Web Design Certification",
       "issuer": "freeCodeCamp",
-      "hours": 300,
-      "area": "Frontend"
+      "year": 2026,
+      "category": "Frontend",
+      "description": "Certificación enfocada en el desarrollo de sitios web modernos, accesibles y completamente responsivos utilizando HTML y CSS.",
+      "topics": [
+        "HTML5",
+        "CSS3",
+        "Responsive Web Design",
+        "Accessibility",
+        "Semantic HTML",
+        "Flexbox",
+        "CSS Grid",
+        "Media Queries",
+        "Typography",
+        "Forms",
+        "Animations"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "Responsive Design",
+        "Flexbox",
+        "CSS Grid",
+        "Accesibilidad"
+      ]
     },
     {
-      "name": "Foundational C# with Microsoft",
+      "id": 2,
+      "name": "Front-End Development Libraries",
+      "issuer": "freeCodeCamp",
+      "year": 2026,
+      "category": "Frontend",
+      "description": "Certificación enfocada en el desarrollo de aplicaciones frontend modernas utilizando bibliotecas y herramientas del ecosistema JavaScript.",
+      "topics": [
+        "React",
+        "React Hooks",
+        "React Router",
+        "Redux",
+        "Bootstrap",
+        "Sass",
+        "State Management",
+        "Performance Optimization",
+        "Testing",
+        "TypeScript",
+        "Component Design"
+      ],
+      "skills": [
+        "React",
+        "React Hooks",
+        "React Router",
+        "Redux",
+        "Bootstrap",
+        "Sass",
+        "TypeScript",
+        "SPA",
+        "Responsive Design"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "JavaScript Algorithms and Data Structures Certification",
+      "issuer": "freeCodeCamp",
+      "year": 2026,
+      "category": "JavaScript",
+      "description": "Certificación enfocada en programación con JavaScript, algoritmos y estructuras de datos.",
+      "topics": [
+        "JavaScript ES6",
+        "Variables",
+        "Funciones",
+        "Closures",
+        "Objetos",
+        "Arrays",
+        "Recursividad",
+        "Algoritmos",
+        "Estructuras de Datos",
+        "Programación Funcional",
+        "POO"
+      ],
+      "skills": [
+        "JavaScript",
+        "ES6",
+        "Algoritmos",
+        "Data Structures",
+        "OOP",
+        "Functional Programming"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Foundational C# with Microsoft Certification",
       "issuer": "Microsoft",
-      "area": "Programación"
+      "year": 2026,
+      "category": "Programación",
+      "description": "Fundamentos del desarrollo utilizando C# y programación orientada a objetos.",
+      "topics": [
+        "C#",
+        "Variables",
+        "Tipos de Datos",
+        "Condicionales",
+        "Bucles",
+        "Métodos",
+        "POO",
+        "Clases",
+        "Objetos",
+        ".NET Fundamentals"
+      ],
+      "skills": [
+        "C#",
+        "OOP",
+        "Software Development",
+        ".NET"
+      ]
     },
     {
+      "id": 5,
+      "name": "Python Programming",
+      "issuer": "Cisco Networking Academy",
+      "year": 2026,
+      "category": "Python",
+      "description": "Fundamentos de programación utilizando Python.",
+      "topics": [
+        "Sintaxis",
+        "Variables",
+        "Funciones",
+        "Módulos",
+        "Condicionales",
+        "Bucles",
+        "Colecciones",
+        "Automatización"
+      ],
+      "skills": [
+        "Python",
+        "Automatización",
+        "Scripting",
+        "Fundamentos"
+      ]
+    },
+    {
+      "id": 6,
       "name": "Python Essentials",
       "issuer": "Cisco Networking Academy",
-      "area": "Python"
+      "year": 2026,
+      "category": "Python",
+      "description": "Programación intermedia utilizando Python y Programación Orientada a Objetos.",
+      "topics": [
+        "POO",
+        "Excepciones",
+        "Funciones",
+        "Clases",
+        "Objetos",
+        "Herencia",
+        "Polimorfismo",
+        "Archivos",
+        "Automatización",
+        "Estructuras de Datos"
+      ],
+      "skills": [
+        "Python",
+        "Programación Orientada a Objetos",
+        "Automatización",
+        "Control de Flujo",
+        "Estructuras de Datos",
+        "Scripting"
+      ]
     },
     {
+      "id": 7,
       "name": "Advanced SQL",
       "issuer": "Kaggle",
-      "area": "Bases de Datos"
+      "year": 2026,
+      "category": "Bases de Datos",
+      "description": "Consultas SQL avanzadas y optimización.",
+      "topics": [
+        "JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "UNION",
+        "CTE",
+        "Subconsultas",
+        "Window Functions",
+        "Optimización",
+        "BigQuery"
+      ],
+      "skills": [
+        "Advanced SQL",
+        "JOINs",
+        "UNION",
+        "Window Functions",
+        "Query Optimization",
+        "BigQuery"
+      ]
     },
     {
+      "id": 8,
+      "name": "Intro to SQL",
+      "issuer": "Kaggle",
+      "year": 2026,
+      "category": "Bases de Datos",
+      "description": "Introducción a SQL utilizando BigQuery.",
+      "topics": [
+        "SELECT",
+        "WHERE",
+        "GROUP BY",
+        "ORDER BY",
+        "LIMIT",
+        "JOIN",
+        "COUNT",
+        "AVG",
+        "BigQuery"
+      ],
+      "skills": [
+        "SQL",
+        "SELECT",
+        "GROUP BY",
+        "JOIN",
+        "BigQuery"
+      ]
+    },
+    {
+      "id": 9,
       "name": "Introduction to Cybersecurity",
       "issuer": "Cisco Networking Academy",
-      "area": "Ciberseguridad"
+      "year": 2026,
+      "category": "Ciberseguridad",
+      "description": "Introducción a la seguridad informática.",
+      "topics": [
+        "Ciberseguridad",
+        "Amenazas",
+        "Ataques",
+        "Protección de Redes",
+        "Malware",
+        "Phishing",
+        "Seguridad de la Información"
+      ],
+      "skills": [
+        "Seguridad Informática",
+        "Protección de Redes",
+        "Ciberseguridad"
+      ]
     },
     {
+      "id": 10,
+      "name": "Modern AI",
+      "issuer": "Cisco",
+      "year": 2024,
+      "category": "Inteligencia Artificial",
+      "description": "Introducción a la Inteligencia Artificial moderna.",
+      "topics": [
+        "Machine Learning",
+        "Deep Learning",
+        "IA Generativa",
+        "LLMs",
+        "Ética en IA",
+        "Prompt Engineering"
+      ],
+      "skills": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Modern AI"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Desarrollo con IA",
+      "issuer": "BIG School",
+      "year": 2026,
+      "category": "Inteligencia Artificial",
+      "description": "Aplicación de herramientas de Inteligencia Artificial en el desarrollo de software.",
+      "topics": [
+        "IA Generativa",
+        "Prompt Engineering",
+        "Automatización",
+        "Asistentes IA",
+        "Integración de APIs",
+        "Productividad"
+      ],
+      "skills": [
+        "Desarrollo con IA",
+        "Fundamentos de IA",
+        "Aplicaciones Prácticas"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Claude Code in Action",
+      "issuer": "Anthropic",
+      "year": 2026,
+      "category": "Inteligencia Artificial",
+      "description": "Uso de Claude Code para acelerar el desarrollo de software.",
+      "topics": [
+        "Claude Code",
+        "Prompt Engineering",
+        "AI Coding",
+        "Code Generation",
+        "Debugging",
+        "Refactoring",
+        "Productividad"
+      ],
+      "skills": [
+        "Claude Code",
+        "AI Assistants",
+        "Code Generation",
+        "LLM Integration"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Integración de Inteligencia Artificial en Escenarios de Aprendizaje",
+      "issuer": "Tecnológico Nacional de México",
+      "year": 2025,
+      "category": "Inteligencia Artificial",
+      "description": "Uso de IA para apoyar procesos de enseñanza y aprendizaje.",
+      "topics": [
+        "IA Educativa",
+        "Herramientas IA",
+        "Escenarios de Aprendizaje",
+        "Innovación Educativa",
+        "Docencia con IA"
+      ],
+      "skills": [
+        "Integración de IA",
+        "Escenarios de Aprendizaje",
+        "Docencia con IA"
+      ]
+    },
+    {
+      "id": 14,
       "name": "Professional Communication",
       "issuer": "LinkedIn Learning",
-      "area": "Habilidades Blandas"
+      "year": 2026,
+      "category": "Habilidades Profesionales",
+      "description": "Comunicación efectiva en ambientes profesionales.",
+      "topics": [
+        "Comunicación",
+        "Presentaciones",
+        "Trabajo en Equipo",
+        "Liderazgo",
+        "Escucha Activa",
+        "Resolución de Conflictos"
+      ],
+      "skills": [
+        "Comunicación Efectiva",
+        "Soft Skills",
+        "Trabajo en Equipo"
+      ]
     },
     {
-      "name": "English Level B1",
+      "id": 15,
+      "name": "English Level B1 Certification",
       "issuer": "Instituto Tecnológico Superior de Calkiní",
-      "area": "Idiomas"
+      "year": 2022,
+      "category": "Idiomas",
+      "description": "Dominio del idioma inglés en nivel intermedio B1.",
+      "topics": [
+        "Reading",
+        "Writing",
+        "Listening",
+        "Speaking",
+        "Grammar",
+        "Vocabulary"
+      ],
+      "skills": [
+        "Inglés B1",
+        "Comprensión",
+        "Comunicación"
+      ]
     }
   ],
-
   "assistant_context": {
-    "response_rule": "Si preguntan por certificaciones, enumera primero las más relevantes para desarrollo de software."
+    "response_rules": [
+      "Si preguntan qué aprendió en una certificación, utiliza el campo 'topics' y 'description'.",
+      "Si preguntan qué habilidades obtuvo, utiliza el campo 'skills'.",
+      "Si preguntan por certificaciones de un área específica, filtra únicamente por la categoría correspondiente.",
+      "Nunca inventes información que no aparezca en este archivo."
+    ]
   }
 }
