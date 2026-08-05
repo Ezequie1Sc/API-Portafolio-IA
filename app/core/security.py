@@ -6,7 +6,7 @@ def configure_cors(app):
     app.add_middleware(
         CORSMiddleware,
         allow_origins=[
-            "https://portafolio-ia-4r2q.onrender.com",
+            "https://api-portafolio-ia.onrender.com",
             "https://ezequieel-dev.vercel.app/",
             "*"
         ],
