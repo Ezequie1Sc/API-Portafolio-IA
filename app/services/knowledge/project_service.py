@@ -7,9 +7,9 @@ class ProjectService:
     def __init__(self):
 
         self.projects_path = (
-            Path(__file__).parent.parent /
-            "data" /
-            "projects"
+            Path(__file__).parent.parent.parent
+            / "data"
+            / "projects"
         )
 
         self.index = self._load_json("index.json")
@@ -23,7 +23,6 @@ class ProjectService:
         file_path = self.projects_path / filename
 
         with open(file_path, "r", encoding="utf-8") as file:
-
             return json.load(file)
 
     # ===================================================
@@ -36,142 +35,65 @@ class ProjectService:
 
         candidates = []
 
-        # ==========================================
-        # Buscar coincidencias en el INDEX
-        # ==========================================
-
         for item in self.index["projects"]:
 
             score = 0
 
-            # -----------------------------
-            # Nombre
-            # -----------------------------
-
             if item["name"].lower() in question:
-
                 score += 10
-
-            # -----------------------------
-            # ID
-            # -----------------------------
 
             if item["id"].lower() in question:
-
                 score += 10
 
-            # -----------------------------
-            # Categoría
-            # -----------------------------
-
-            if item.get(
-                "category",
-                ""
-            ).lower() in question:
-
+            if item.get("category", "").lower() in question:
                 score += 3
 
-            # -----------------------------
-            # Keywords
-            # -----------------------------
-
-            for keyword in item.get(
-                "keywords",
-                []
-            ):
+            for keyword in item.get("keywords", []):
 
                 if keyword.lower() in question:
-
                     score += 2
 
-            # -----------------------------
-            # Destacados
-            # -----------------------------
-
-            if item.get(
-                "featured",
-                False
-            ):
+            if item.get("featured", False):
 
                 if any(
-
                     word in question
-
                     for word in [
-
                         "importante",
-
                         "importantes",
-
                         "principal",
-
                         "principales",
-
                         "mejor",
-
                         "mejores",
-
                         "destacado",
-
-                        "destacados"
-
+                        "destacados",
                     ]
-
                 ):
-
                     score += 5
-
-            # -----------------------------
-            # Encontró coincidencias
-            # -----------------------------
 
             if score > 0:
 
-                candidates.append({
-
-                    "file": item["file"],
-
-                    "score": score
-
-                })
-
-        # ==========================================
-        # Ordenar por relevancia
-        # ==========================================
+                candidates.append(
+                    {
+                        "file": item["file"],
+                        "score": score,
+                    }
+                )
 
         candidates.sort(
-
             key=lambda item: item["score"],
-
-            reverse=True
-
+            reverse=True,
         )
 
-        # ==========================================
-        # Eliminar duplicados
-        # ==========================================
-
         files = []
-
         used = set()
 
         for candidate in candidates:
 
             if candidate["file"] in used:
-
                 continue
 
             used.add(candidate["file"])
-
-            files.append(
-
-                candidate["file"]
-
-            )
-
-        # ==========================================
-        # Cargar únicamente los proyectos encontrados
-        # ==========================================
+            files.append(candidate["file"])
 
         projects = []
 
@@ -180,20 +102,12 @@ class ProjectService:
             try:
 
                 projects.append(
-
                     self._load_json(filename)
-
                 )
 
             except Exception as e:
 
-                print(
-                    f"Error cargando {filename}: {e}"
-                )
-
-        # ==========================================
-        # Debug
-        # ==========================================
+                print(f"Error cargando {filename}: {e}")
 
         print("\n========== PROJECT SERVICE ==========")
         print("Pregunta:", question)
