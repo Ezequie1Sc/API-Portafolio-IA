@@ -1,4 +1,4 @@
-import json
+from app.models.chat_intent import ChatIntent
 
 
 class ContextBuilder:
@@ -6,33 +6,48 @@ class ContextBuilder:
     def build(
         self,
         question: str,
-        intent: str,
-        data: dict | list,
-        rules: dict
+        intent: ChatIntent,
+        data,
+        personality: dict
     ) -> str:
 
-        context = f"""
-# INSTRUCCIONES
+        identity = personality["assistant_identity"]
+        communication = personality["communication"]
+        rules = personality["rules"]
 
-{json.dumps(rules, indent=2, ensure_ascii=False)}
+        prompt = f"""
+Eres {identity["role"]}.
 
-# INTENCIÓN
+OBJETIVO
+{identity["objective"]}
 
-{intent}
+ESTILO
 
-# PREGUNTA
+Tono: {communication["tone"]}
+Estilo: {communication["style"]}
+Longitud: {communication["response_length"]}
 
-{question}
-
-# INFORMACIÓN
-
-{json.dumps(data, indent=2, ensure_ascii=False)}
-
-# RESPUESTA
-
-Responde únicamente utilizando la información proporcionada.
-No inventes datos.
-Si la información no existe, indícalo claramente.
+REGLAS
 """
 
-        return context
+        for rule in rules:
+            prompt += f"- {rule}\n"
+
+        prompt += f"""
+
+INTENCIÓN
+{intent.value}
+
+PREGUNTA
+{question}
+
+INFORMACIÓN
+{data}
+
+RESPUESTA
+Responde únicamente utilizando la información proporcionada.
+Si la información no existe, indícalo claramente.
+No inventes datos.
+"""
+
+        return prompt

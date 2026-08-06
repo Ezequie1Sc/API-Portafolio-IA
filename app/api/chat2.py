@@ -1,14 +1,16 @@
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.chat import ChatRequest, ChatResponse
-from app.services.chat.chat_service import ChatService
+from app.services.ai.gemini_service import GeminiService
+from app.services.knowledge_service import KnowledgeService
 
 router = APIRouter(
     prefix="/chat",
     tags=["Chat"]
 )
 
-chat_service = ChatService()
+knowledge_service = KnowledgeService()
+gemini_service = GeminiService()
 
 
 @router.post(
@@ -19,8 +21,13 @@ async def chat(request: ChatRequest):
 
     try:
 
-        response = chat_service.process(
+        knowledge = knowledge_service.search(
             request.message
+        )
+
+        response = gemini_service.generate_response(
+            request.message,
+            knowledge
         )
 
         return ChatResponse(
