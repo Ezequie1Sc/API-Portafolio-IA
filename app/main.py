@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from app.api import chat_router
 from app.core.config import settings
 from app.core.security import configure_cors
-from app.services.gemini_service import GeminiService
+from app.services.ai.gemini_service import GeminiService
 
 app = FastAPI(
     title=settings.APP_NAME,

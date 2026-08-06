@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from app.services.project_service import ProjectService
+from app.services.portfolio.project_service import ProjectService
 
 
 class KnowledgeService:

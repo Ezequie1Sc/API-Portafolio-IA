@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.chat import ChatRequest, ChatResponse
-from app.services.gemini_service import GeminiService
+from app.services.ai.gemini_service import GeminiService
 from app.services.knowledge_service import KnowledgeService
 
 router = APIRouter(
