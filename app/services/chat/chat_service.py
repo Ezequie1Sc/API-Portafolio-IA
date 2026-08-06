@@ -8,6 +8,8 @@ from app.services.knowledge.contact_service import ContactService
 from app.services.knowledge.education_service import EducationService
 from app.services.knowledge.experience_service import ExperienceService
 from app.services.knowledge.project_service import ProjectService
+from app.services.knowledge.skill_service import SkillService
+from app.services.knowledge.certification_service import CertificationService
 from app.services.knowledge.personality_service import PersonalityService
 
 
@@ -23,6 +25,8 @@ class ChatService:
         self.education_service = EducationService()
         self.experience_service = ExperienceService()
         self.project_service = ProjectService()
+        self.skill_service = SkillService()
+        self.certification_service = CertificationService()
         self.personality_service = PersonalityService()
         
         self.handlers = {
@@ -30,7 +34,9 @@ class ChatService:
             ChatIntent.CONTACT: self.contact_service.get,
             ChatIntent.EDUCATION: self.education_service.get,
             ChatIntent.EXPERIENCE: self.experience_service.get,
-            ChatIntent.PROJECT: self.project_service.search
+            ChatIntent.PROJECT: self.project_service.search,
+            ChatIntent.SKILL: self.skill_service.search,
+            ChatIntent.CERTIFICATION: self.certification_service.search
         }
 
     def process(self, question: str):
@@ -60,7 +66,12 @@ class ChatService:
         
         # Caso 3: Intents con datos estructurados
         try:
-            if intent == ChatIntent.PROJECT:
+            # MÚLTIPLES INTENTS QUE NECESITAN LA PREGUNTA COMO PARÁMETRO
+            if intent in (
+                ChatIntent.PROJECT,
+                ChatIntent.SKILL,
+                ChatIntent.CERTIFICATION,
+            ):
                 data = handler(question)
             else:
                 data = handler()
