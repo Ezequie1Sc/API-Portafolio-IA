@@ -17,23 +17,55 @@ class SkillService(BaseDataService):
 
         skills = self.get()
 
-        matches = []
+        result = {}
 
-        for category, technologies in skills.items():
+        for category, content in skills.items():
 
-            if isinstance(technologies, list):
+            if not isinstance(content, dict):
+                continue
 
-                for tech in technologies:
+            technologies = content.get("technologies", [])
 
-                    if question in tech.lower() or tech.lower() in question:
+            matches = []
 
-                        matches.append(tech)
+            for tech in technologies:
 
-        if matches:
+                name = tech.get("name", "").lower()
 
-            return {
-                "matches": matches,
-                "skills": skills
-            }
+                if (
+                    name in question
+                    or question in name
+                ):
+                    matches.append(tech)
 
-        return skills
+            if matches:
+
+                result[category] = {
+
+                    "description": content.get("description", ""),
+
+                    "technologies": matches
+
+                }
+
+        # Si encontró tecnologías específicas
+        if result:
+
+            return result
+
+        # Si preguntan "¿Qué tecnologías maneja?"
+        if any(
+            word in question
+            for word in [
+                "tecnologias",
+                "tecnología",
+                "tecnologia",
+                "stack",
+                "habilidades",
+                "skills"
+            ]
+        ):
+
+            return skills
+
+        return {}
