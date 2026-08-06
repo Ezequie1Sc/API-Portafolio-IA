@@ -1,5 +1,4 @@
-from app.services.portfolio.base_data_service import BaseDataService
-
+from app.services.knowledge.base_data_service import BaseDataService
 
 class ContactService(BaseDataService):
 
