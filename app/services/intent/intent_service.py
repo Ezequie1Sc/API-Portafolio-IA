@@ -1,3 +1,4 @@
+# app/services/intent/intent_service.py
 from app.models.chat_intent import ChatIntent
 
 
@@ -6,36 +7,50 @@ class IntentService:
     def __init__(self):
 
         self.intents = {
+            ChatIntent.GENERAL: [
+                "hola",
+                "buenas",
+                "buenos dias",
+                "buenas tardes",
+                "buenas noches",
+                "hey",
+                "que tal",
+                "cómo estás",
+                "como estas",
+                "gracias",
+                "adiós",
+                "adios",
+                "hasta luego"
+            ],
 
             ChatIntent.PROFILE: [
                 "perfil",
                 "información",
                 "informacion",
+                "quién eres",
+                "quien eres",
                 "quién es",
                 "quien es",
-                "háblame",
-                "hablame",
+                "háblame de ti",
+                "hablame de ti",
+                "sobre ti",
                 "sobre él",
                 "sobre el",
                 "currículum",
-                "cv"
+                "cv",
+                "presentate",
+                "preséntate"
             ],
 
             ChatIntent.PROJECT: [
                 "proyecto",
                 "proyectos",
-                "react",
-                "angular",
-                "flutter",
-                "fastapi",
-                "flask",
-                "api",
-                "backend",
-                "frontend",
                 "portafolio",
-                "sistema",
-                "aplicación",
-                "aplicacion"
+                "portfolio",
+                "has hecho",
+                "has desarrollado",
+                "creaste",
+                "desarrollaste"
             ],
 
             ChatIntent.CONTACT: [
@@ -44,79 +59,111 @@ class IntentService:
                 "teléfono",
                 "telefono",
                 "contacto",
+                "contactarte",
+                "contactarlo",
                 "github",
                 "linkedin",
-                "linkedin",
                 "celular",
-                "whatsapp"
+                "whatsapp",
+                "ubicación",
+                "ubicacion",
+                "dirección",
+                "direccion"
             ],
 
             ChatIntent.EDUCATION: [
                 "estudió",
                 "estudio",
+                "estudiaste",
                 "universidad",
                 "escuela",
                 "educación",
                 "educacion",
                 "itescam",
                 "ingeniería",
-                "ingenieria"
+                "ingenieria",
+                "carrera",
+                "formación",
+                "formacion"
             ],
 
             ChatIntent.EXPERIENCE: [
                 "experiencia",
                 "trabajo",
+                "trabajaste",
+                "has trabajado",
                 "empresa",
                 "plenumsoft",
                 "laboral",
-                "empleo"
+                "empleo",
+                "cargo",
+                "puesto"
             ],
 
             ChatIntent.SKILL: [
                 "habilidades",
+                "habilidad",
                 "tecnologías",
                 "tecnologias",
                 "stack",
                 "lenguajes",
-                "python",
-                "react",
-                "sql",
-                "flutter"
+                "sabes",
+                "conoces",
+                "manejas",
+                "dominas"
             ],
 
             ChatIntent.CERTIFICATION: [
                 "certificación",
                 "certificacion",
                 "certificaciones",
+                "certificado",
                 "curso",
                 "diploma",
                 "freecodecamp",
                 "cisco",
                 "kaggle"
             ]
+        }
 
+        # Palabras específicas con pesos para resolver ambigüedad
+        self.specific_keywords = {
+            "react": ChatIntent.SKILL,
+            "angular": ChatIntent.SKILL,
+            "flutter": ChatIntent.SKILL,
+            "python": ChatIntent.SKILL,
+            "fastapi": ChatIntent.SKILL,
+            "flask": ChatIntent.SKILL,
+            "sql": ChatIntent.SKILL
         }
 
     def detect(self, question: str) -> ChatIntent:
-
         question = question.lower()
-
         scores = {}
-
+        
         for intent, keywords in self.intents.items():
-
             score = 0
-
+            
             for keyword in keywords:
-
                 if keyword in question:
                     score += 1
-
+            
             scores[intent] = score
-
-        best_intent = max(scores, key=scores.get)
-
-        if scores[best_intent] == 0:
+        
+        # Verificar si hay empate en la puntuación máxima
+        max_score = max(scores.values())
+        
+        if max_score == 0:
             return ChatIntent.UNKNOWN
-
-        return best_intent
+        
+        # Obtener todos los intents con la puntuación máxima
+        best_intents = [intent for intent, score in scores.items() if score == max_score]
+        
+        # Si hay empate, usar palabras específicas para resolver ambigüedad
+        if len(best_intents) > 1:
+            for word, intent in self.specific_keywords.items():
+                if word in question and intent in best_intents:
+                    return intent
+        
+        # Si no se pudo resolver, devolver el primero
+        return best_intents[0]
