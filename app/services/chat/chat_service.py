@@ -1,3 +1,5 @@
+# app/services/chat/chat_service.py
+
 from app.models.chat_intent import ChatIntent
 from app.services.intent.intent_service import IntentService
 from app.services.ai.context_builder import ContextBuilder
@@ -60,9 +62,9 @@ class ChatService:
 
         personality = self.personality_service.get()
 
-        # ============================================
-        # GENERAL
-        # ============================================
+        # =====================================
+        # Conversación general
+        # =====================================
 
         if intent == ChatIntent.GENERAL:
 
@@ -73,14 +75,11 @@ class ChatService:
                 personality=personality
             )
 
-            return {
-                "type": "text",
-                "message": self.gemini_service.generate(prompt)
-            }
+            return self.gemini_service.generate(prompt)
 
-        # ============================================
-        # UNKNOWN
-        # ============================================
+        # =====================================
+        # Intent desconocido
+        # =====================================
 
         if handler is None:
 
@@ -91,16 +90,13 @@ class ChatService:
                 personality=personality
             )
 
-            return {
-                "type": "text",
-                "message": self.gemini_service.generate(prompt)
-            }
+            return self.gemini_service.generate(prompt)
+
+        # =====================================
+        # Intents con información
+        # =====================================
 
         try:
-
-            # ============================================
-            # Servicios que requieren la pregunta
-            # ============================================
 
             if intent in (
 
@@ -118,44 +114,6 @@ class ChatService:
 
                 data = handler()
 
-            # ============================================
-            # RESPUESTAS VISUALES
-            # ============================================
-
-            if intent == ChatIntent.PROFILE:
-
-                return {
-
-                    "type": "profile",
-
-                    "data": data
-
-                }
-
-            if intent == ChatIntent.GITHUB:
-
-                return {
-
-                    "type": "github",
-
-                    "data": data
-
-                }
-
-            if intent == ChatIntent.SKILL:
-
-                return {
-
-                    "type": "skills",
-
-                    "data": data
-
-                }
-
-            # ============================================
-            # RESPUESTAS CON GEMINI
-            # ============================================
-
             prompt = self.context_builder.build(
 
                 question=question,
@@ -168,32 +126,17 @@ class ChatService:
 
             )
 
-            return {
+            return self.gemini_service.generate(prompt)
 
-                "type": "text",
+        except Exception as e:
 
-                "message": self.gemini_service.generate(prompt)
-
-            }
-
-        except Exception:
+            print(e)
 
             prompt = self.context_builder.build(
-
                 question=question,
-
                 intent=ChatIntent.UNKNOWN,
-
                 data={},
-
                 personality=personality
-
             )
 
-            return {
-
-                "type": "text",
-
-                "message": self.gemini_service.generate(prompt)
-
-            }
+            return self.gemini_service.generate(prompt)

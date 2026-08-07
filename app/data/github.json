@@ -1,9 +1,20 @@
 {
   "username": "Ezequie1Sc",
 
+  "profile_url": "https://github.com/Ezequie1Sc",
+
+  "repositories_url": "https://github.com/Ezequie1Sc?tab=repositories",
+
+  "description": "Perfil oficial de GitHub donde se encuentran los proyectos públicos, repositorios y contribuciones del portafolio.",
+
   "card": {
     "show_contributions": true,
     "show_profile_button": true,
     "show_repositories_button": true
+  },
+
+  "assistant_context": {
+    "purpose": "Utilizar esta información cuando el usuario pregunte por GitHub, repositorios, código fuente o contribuciones.",
+    "answer_style": "Invitar al usuario a visitar el perfil de GitHub y mencionar los proyectos públicos disponibles."
   }
 }
