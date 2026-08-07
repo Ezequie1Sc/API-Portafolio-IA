@@ -6,11 +6,12 @@ from app.services.knowledge.base_data_service import BaseDataService
 class GithubService(BaseDataService):
 
     def __init__(self):
-        super().__init__("github.json")
+
+        super().__init__()
 
     def get(self):
 
-        config = self.load_data()
+        config = self.load_json("github.json")
 
         username = config["username"]
 
@@ -35,9 +36,11 @@ class GithubService(BaseDataService):
 
             "profile_url": github.get("html_url"),
 
-            "repositories_url": github.get("html_url") + "?tab=repositories",
+            "repositories_url":
+                github.get("html_url") + "?tab=repositories",
 
-            "public_repositories": github.get("public_repos"),
+            "public_repositories":
+                github.get("public_repos"),
 
             "contributions_chart":
                 f"https://ghchart.rshah.org/2563eb/{github.get('login')}"
