@@ -2,12 +2,13 @@
 from enum import Enum
 
 class ChatIntent(Enum):
-    GENERAL = "general"        # NUEVO: Saludos y conversación casual
+    GENERAL = "general"        
     PROFILE = "profile"
     PROJECT = "project"
     CONTACT = "contact"
     EDUCATION = "education"
     EXPERIENCE = "experience"
-    SKILL = "skill"
+    SKILL = "skill"    
     CERTIFICATION = "certification"
+    GITHUB = "github"  
     UNKNOWN = "unknown"

@@ -1,4 +1,5 @@
 # app/services/intent/intent_service.py
+
 from app.models.chat_intent import ChatIntent
 
 
@@ -7,6 +8,7 @@ class IntentService:
     def __init__(self):
 
         self.intents = {
+
             ChatIntent.GENERAL: [
                 "hola",
                 "buenas",
@@ -61,7 +63,6 @@ class IntentService:
                 "contacto",
                 "contactarte",
                 "contactarlo",
-                "github",
                 "linkedin",
                 "celular",
                 "whatsapp",
@@ -123,47 +124,84 @@ class IntentService:
                 "freecodecamp",
                 "cisco",
                 "kaggle"
+            ],
+
+            ChatIntent.GITHUB: [
+                "github",
+                "git hub",
+                "perfil github",
+                "perfil de github",
+                "repositorio",
+                "repositorios",
+                "repos",
+                "código",
+                "codigo",
+                "código fuente",
+                "codigo fuente",
+                "commit",
+                "commits",
+                "contribución",
+                "contribuciones",
+                "contribution",
+                "git"
             ]
+
         }
 
         # Palabras específicas con pesos para resolver ambigüedad
         self.specific_keywords = {
+
             "react": ChatIntent.SKILL,
             "angular": ChatIntent.SKILL,
             "flutter": ChatIntent.SKILL,
             "python": ChatIntent.SKILL,
             "fastapi": ChatIntent.SKILL,
             "flask": ChatIntent.SKILL,
-            "sql": ChatIntent.SKILL
+            "sql": ChatIntent.SKILL,
+
+            "github": ChatIntent.GITHUB,
+            "repositorio": ChatIntent.GITHUB,
+            "repositorios": ChatIntent.GITHUB,
+            "commit": ChatIntent.GITHUB,
+            "commits": ChatIntent.GITHUB,
+            "contribución": ChatIntent.GITHUB,
+            "contribuciones": ChatIntent.GITHUB
+
         }
 
     def detect(self, question: str) -> ChatIntent:
+
         question = question.lower()
+
         scores = {}
-        
+
         for intent, keywords in self.intents.items():
+
             score = 0
-            
+
             for keyword in keywords:
+
                 if keyword in question:
                     score += 1
-            
+
             scores[intent] = score
-        
-        # Verificar si hay empate en la puntuación máxima
+
         max_score = max(scores.values())
-        
+
         if max_score == 0:
             return ChatIntent.UNKNOWN
-        
-        # Obtener todos los intents con la puntuación máxima
-        best_intents = [intent for intent, score in scores.items() if score == max_score]
-        
-        # Si hay empate, usar palabras específicas para resolver ambigüedad
+
+        best_intents = [
+            intent
+            for intent, score in scores.items()
+            if score == max_score
+        ]
+
         if len(best_intents) > 1:
+
             for word, intent in self.specific_keywords.items():
+
                 if word in question and intent in best_intents:
                     return intent
-        
-        # Si no se pudo resolver, devolver el primero
+
         return best_intents[0]
