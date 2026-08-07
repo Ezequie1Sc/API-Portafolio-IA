@@ -1,15 +1,9 @@
 {
   "username": "Ezequie1Sc",
 
-  "display_name": "Orlando Ezequiel Salazar Cruz",
-
-  "title": "Full Stack Developer",
-
-  "avatar": "/images/profile.jpg",
-
-  "profile_url": "https://github.com/Ezequie1Sc",
-
-  "repositories_url": "https://github.com/Ezequie1Sc?tab=repositories",
-
-  "contributions_chart": "https://ghchart.rshah.org/2563eb/Ezequie1Sc"
+  "card": {
+    "show_contributions": true,
+    "show_profile_button": true,
+    "show_repositories_button": true
+  }
 }
