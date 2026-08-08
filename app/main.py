@@ -17,33 +17,53 @@ app = FastAPI(
 
 configure_cors(app)
 
-# ============================
+# =====================================================
 # Routers
-# ============================
+# =====================================================
 
 app.include_router(chat_router)
 app.include_router(knowledge_router)
 
-# ============================
-# Gemini
-# ============================
+# =====================================================
+# Services
+# =====================================================
 
 gemini_service = GeminiService()
 
-# ============================
+# =====================================================
 # Root
-# ============================
+# =====================================================
 
 @app.get("/")
 async def root():
     return {
-        "message": "Portfolio IA API",
-        "status": "running"
+        "application": settings.APP_NAME,
+        "version": settings.API_VERSION,
+        "status": "running",
+        "documentation": {
+            "swagger": "/docs",
+            "redoc": "/redoc"
+        },
+        "endpoints": {
+            "chat": {
+                "method": "POST",
+                "url": "/chat"
+            },
+            "knowledge": {
+                "profile": "/knowledge/profile",
+                "skills": "/knowledge/skills",
+                "github": "/knowledge/github"
+            },
+            "utilities": {
+                "test_gemini": "/test-gemini",
+                "models": "/models"
+            }
+        }
     }
 
-# ============================
+# =====================================================
 # Test Gemini
-# ============================
+# =====================================================
 
 @app.get("/test-gemini")
 async def test_gemini():
@@ -56,7 +76,8 @@ async def test_gemini():
         )
 
         return {
-            "respuesta": response.text
+            "status": "success",
+            "response": response.text
         }
 
     except Exception as e:
@@ -66,9 +87,9 @@ async def test_gemini():
             detail=str(e)
         )
 
-# ============================
-# Listar modelos
-# ============================
+# =====================================================
+# Available Models
+# =====================================================
 
 @app.get("/models")
 async def list_models():
