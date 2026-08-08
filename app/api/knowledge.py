@@ -4,12 +4,10 @@ from app.services.knowledge.profile_service import ProfileService
 from app.services.knowledge.skill_service import SkillService
 from app.services.knowledge.github_service import GithubService
 
-
 router = APIRouter(
     prefix="/knowledge",
     tags=["Knowledge"]
 )
-
 
 profile_service = ProfileService()
 skill_service = SkillService()
