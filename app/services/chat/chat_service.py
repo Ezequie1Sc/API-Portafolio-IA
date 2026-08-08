@@ -35,31 +35,19 @@ class ChatService:
         self.github_service = GithubService()
 
         self.handlers = {
-
             ChatIntent.PROFILE: self.profile_service.get,
-
             ChatIntent.CONTACT: self.contact_service.get,
-
             ChatIntent.EDUCATION: self.education_service.get,
-
             ChatIntent.EXPERIENCE: self.experience_service.get,
-
             ChatIntent.PROJECT: self.project_service.search,
-
             ChatIntent.SKILL: self.skill_service.search,
-
             ChatIntent.CERTIFICATION: self.certification_service.search,
-
             ChatIntent.GITHUB: self.github_service.get
-
         }
 
     def process(self, question: str):
-
         intent = self.intent_service.detect(question)
-
         handler = self.handlers.get(intent)
-
         personality = self.personality_service.get()
 
         # =====================================
@@ -67,7 +55,6 @@ class ChatService:
         # =====================================
 
         if intent == ChatIntent.GENERAL:
-
             prompt = self.context_builder.build(
                 question=question,
                 intent=ChatIntent.GENERAL,
@@ -75,14 +62,18 @@ class ChatService:
                 personality=personality
             )
 
-            return self.gemini_service.generate(prompt)
+            response = self.gemini_service.generate(prompt)
+
+            return {
+                "response": response,
+                "intent": "general"
+            }
 
         # =====================================
         # Intent desconocido
         # =====================================
 
         if handler is None:
-
             prompt = self.context_builder.build(
                 question=question,
                 intent=ChatIntent.UNKNOWN,
@@ -90,46 +81,42 @@ class ChatService:
                 personality=personality
             )
 
-            return self.gemini_service.generate(prompt)
+            response = self.gemini_service.generate(prompt)
+
+            return {
+                "response": response,
+                "intent": "unknown"
+            }
 
         # =====================================
         # Intents con información
         # =====================================
 
         try:
-
             if intent in (
-
                 ChatIntent.PROJECT,
-
                 ChatIntent.SKILL,
-
                 ChatIntent.CERTIFICATION,
-
             ):
-
                 data = handler(question)
-
             else:
-
                 data = handler()
 
             prompt = self.context_builder.build(
-
                 question=question,
-
                 intent=intent,
-
                 data=data,
-
                 personality=personality
-
             )
 
-            return self.gemini_service.generate(prompt)
+            response = self.gemini_service.generate(prompt)
+
+            return {
+                "response": response,
+                "intent": intent.value
+            }
 
         except Exception as e:
-
             print(e)
 
             prompt = self.context_builder.build(
@@ -139,4 +126,9 @@ class ChatService:
                 personality=personality
             )
 
-            return self.gemini_service.generate(prompt)
+            response = self.gemini_service.generate(prompt)
+
+            return {
+                "response": response,
+                "intent": "unknown"
+            }
