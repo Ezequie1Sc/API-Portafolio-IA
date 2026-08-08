@@ -17,11 +17,22 @@ app = FastAPI(
 
 configure_cors(app)
 
+# ============================
+# Routers
+# ============================
+
 app.include_router(chat_router)
 app.include_router(knowledge_router)
 
+# ============================
+# Gemini
+# ============================
+
 gemini_service = GeminiService()
 
+# ============================
+# Root
+# ============================
 
 @app.get("/")
 async def root():
@@ -30,6 +41,9 @@ async def root():
         "status": "running"
     }
 
+# ============================
+# Test Gemini
+# ============================
 
 @app.get("/test-gemini")
 async def test_gemini():
@@ -52,6 +66,9 @@ async def test_gemini():
             detail=str(e)
         )
 
+# ============================
+# Listar modelos
+# ============================
 
 @app.get("/models")
 async def list_models():
