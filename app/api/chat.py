@@ -19,12 +19,13 @@ async def chat(request: ChatRequest):
 
     try:
 
-        response = chat_service.process(
+        result = chat_service.process(
             request.message
         )
 
         return ChatResponse(
-            response=response
+            response=result["response"],
+            intent=result["intent"]
         )
 
     except Exception as e:
