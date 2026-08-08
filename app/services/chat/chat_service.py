@@ -52,7 +52,7 @@ class ChatService:
         personality = self.personality_service.get()
 
         # ==========================================
-        # RESPUESTAS DIRECTAS (SIN GEMINI)
+        # RESPUESTAS DIRECTAS (CON CARD)
         # ==========================================
 
         direct_messages = {
@@ -65,18 +65,6 @@ class ChatService:
 
             ChatIntent.SKILL:
                 "🚀 Estas son las tecnologías y herramientas con las que trabajo actualmente.",
-
-            ChatIntent.CONTACT:
-                "📬 Aquí tienes mi información de contacto.",
-
-            ChatIntent.EDUCATION:
-                "🎓 Te comparto mi formación académica.",
-
-            ChatIntent.EXPERIENCE:
-                "💼 Esta es mi experiencia profesional.",
-
-            ChatIntent.CERTIFICATION:
-                "📜 Estas son mis certificaciones.",
 
         }
 
@@ -104,7 +92,7 @@ class ChatService:
 
             return {
                 "response": response,
-                "intent": "general"
+                "intent": intent.value
             }
 
         # ==========================================
@@ -124,16 +112,26 @@ class ChatService:
 
             return {
                 "response": response,
-                "intent": "unknown"
+                "intent": intent.value
             }
 
         # ==========================================
-        # PROYECTOS (AQUÍ SÍ GEMINI APORTA VALOR)
+        # RESTO DE INTENTS (CON GEMINI)
         # ==========================================
 
         try:
 
-            data = handler(question)
+            if intent in (
+                ChatIntent.PROJECT,
+                ChatIntent.SKILL,
+                ChatIntent.CERTIFICATION,
+            ):
+
+                data = handler(question)
+
+            else:
+
+                data = handler()
 
             prompt = self.context_builder.build(
                 question=question,
@@ -153,7 +151,16 @@ class ChatService:
 
             print(e)
 
+            prompt = self.context_builder.build(
+                question=question,
+                intent=ChatIntent.UNKNOWN,
+                data={},
+                personality=personality
+            )
+
+            response = self.gemini_service.generate(prompt)
+
             return {
-                "response": "Lo siento, ocurrió un error al procesar tu solicitud.",
-                "intent": "unknown"
+                "response": response,
+                "intent": ChatIntent.UNKNOWN.value
             }
