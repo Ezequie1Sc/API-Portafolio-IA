@@ -1,9 +1,14 @@
 from fastapi import FastAPI, HTTPException
 
-from app.api import chat_router
+from app.api import (
+    chat_router,
+    knowledge_router,
+)
+
 from app.core.config import settings
 from app.core.security import configure_cors
 from app.services.ai.gemini_service import GeminiService
+
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -13,6 +18,7 @@ app = FastAPI(
 configure_cors(app)
 
 app.include_router(chat_router)
+app.include_router(knowledge_router)
 
 gemini_service = GeminiService()
 
@@ -27,7 +33,9 @@ async def root():
 
 @app.get("/test-gemini")
 async def test_gemini():
+
     try:
+
         response = gemini_service.client.models.generate_content(
             model="gemini-2.5-flash",
             contents="Responde únicamente: OK"
@@ -38,6 +46,7 @@ async def test_gemini():
         }
 
     except Exception as e:
+
         raise HTTPException(
             status_code=500,
             detail=str(e)
@@ -46,7 +55,9 @@ async def test_gemini():
 
 @app.get("/models")
 async def list_models():
+
     try:
+
         models = [
             model.name
             for model in gemini_service.client.models.list()
@@ -58,6 +69,7 @@ async def list_models():
         }
 
     except Exception as e:
+
         raise HTTPException(
             status_code=500,
             detail=str(e)
