@@ -10,6 +10,10 @@ from app.core.security import configure_cors
 from app.services.ai.gemini_service import GeminiService
 
 
+# =====================================================
+# FastAPI
+# =====================================================
+
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.API_VERSION,
@@ -36,6 +40,7 @@ gemini_service = GeminiService()
 
 @app.get("/")
 async def root():
+
     return {
         "application": settings.APP_NAME,
         "version": settings.API_VERSION,
@@ -55,11 +60,27 @@ async def root():
                 "github": "/knowledge/github"
             },
             "utilities": {
+                "health": "/health",
                 "test_gemini": "/test-gemini",
                 "models": "/models"
             }
         }
     }
+
+
+# =====================================================
+# Health Check
+# =====================================================
+
+@app.get("/health")
+async def health():
+
+    return {
+        "status": "ok",
+        "application": settings.APP_NAME,
+        "version": settings.API_VERSION
+    }
+
 
 # =====================================================
 # Test Gemini
@@ -86,6 +107,7 @@ async def test_gemini():
             status_code=500,
             detail=str(e)
         )
+
 
 # =====================================================
 # Available Models
