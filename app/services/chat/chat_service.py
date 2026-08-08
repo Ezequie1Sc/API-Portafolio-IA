@@ -1,5 +1,3 @@
-# app/services/chat/chat_service.py
-
 from app.models.chat_intent import ChatIntent
 from app.services.intent.intent_service import IntentService
 from app.services.ai.context_builder import ContextBuilder
@@ -42,19 +40,59 @@ class ChatService:
             ChatIntent.PROJECT: self.project_service.search,
             ChatIntent.SKILL: self.skill_service.search,
             ChatIntent.CERTIFICATION: self.certification_service.search,
-            ChatIntent.GITHUB: self.github_service.get
+            ChatIntent.GITHUB: self.github_service.get,
         }
 
     def process(self, question: str):
+
         intent = self.intent_service.detect(question)
+
         handler = self.handlers.get(intent)
+
         personality = self.personality_service.get()
 
-        # =====================================
-        # Conversación general
-        # =====================================
+        # ==========================================
+        # RESPUESTAS DIRECTAS (SIN GEMINI)
+        # ==========================================
+
+        direct_messages = {
+
+            ChatIntent.PROFILE:
+                "👋 Aquí tienes mi perfil profesional.",
+
+            ChatIntent.GITHUB:
+                "💻 Aquí puedes explorar mi perfil oficial de GitHub.",
+
+            ChatIntent.SKILL:
+                "🚀 Estas son las tecnologías y herramientas con las que trabajo actualmente.",
+
+            ChatIntent.CONTACT:
+                "📬 Aquí tienes mi información de contacto.",
+
+            ChatIntent.EDUCATION:
+                "🎓 Te comparto mi formación académica.",
+
+            ChatIntent.EXPERIENCE:
+                "💼 Esta es mi experiencia profesional.",
+
+            ChatIntent.CERTIFICATION:
+                "📜 Estas son mis certificaciones.",
+
+        }
+
+        if intent in direct_messages:
+
+            return {
+                "response": direct_messages[intent],
+                "intent": intent.value
+            }
+
+        # ==========================================
+        # CONVERSACIÓN GENERAL
+        # ==========================================
 
         if intent == ChatIntent.GENERAL:
+
             prompt = self.context_builder.build(
                 question=question,
                 intent=ChatIntent.GENERAL,
@@ -69,11 +107,12 @@ class ChatService:
                 "intent": "general"
             }
 
-        # =====================================
-        # Intent desconocido
-        # =====================================
+        # ==========================================
+        # INTENT DESCONOCIDO
+        # ==========================================
 
         if handler is None:
+
             prompt = self.context_builder.build(
                 question=question,
                 intent=ChatIntent.UNKNOWN,
@@ -88,19 +127,13 @@ class ChatService:
                 "intent": "unknown"
             }
 
-        # =====================================
-        # Intents con información
-        # =====================================
+        # ==========================================
+        # PROYECTOS (AQUÍ SÍ GEMINI APORTA VALOR)
+        # ==========================================
 
         try:
-            if intent in (
-                ChatIntent.PROJECT,
-                ChatIntent.SKILL,
-                ChatIntent.CERTIFICATION,
-            ):
-                data = handler(question)
-            else:
-                data = handler()
+
+            data = handler(question)
 
             prompt = self.context_builder.build(
                 question=question,
@@ -117,18 +150,10 @@ class ChatService:
             }
 
         except Exception as e:
+
             print(e)
 
-            prompt = self.context_builder.build(
-                question=question,
-                intent=ChatIntent.UNKNOWN,
-                data={},
-                personality=personality
-            )
-
-            response = self.gemini_service.generate(prompt)
-
             return {
-                "response": response,
+                "response": "Lo siento, ocurrió un error al procesar tu solicitud.",
                 "intent": "unknown"
             }
