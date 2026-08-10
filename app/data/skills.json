@@ -58,7 +58,7 @@
   },
 
   "backend": {
-    "description": "Desarrollo de APIs REST y lógica de negocio.",
+    "description": "Desarrollo de APIs REST, servicios backend y lógica de negocio.",
     "technologies": [
       {
         "name": "Python",
@@ -79,12 +79,19 @@
           "JWT",
           "Swagger",
           "Variables de entorno",
-          "Render",
           "Arquitectura por capas"
         ]
       },
       {
         "name": "Flask",
+        "level": "Intermedio"
+      },
+      {
+        "name": "Java",
+        "level": "Intermedio"
+      },
+      {
+        "name": "C#",
         "level": "Intermedio"
       }
     ]
@@ -113,6 +120,7 @@
   },
 
   "database": {
+    "description": "Diseño, consulta y gestión de bases de datos.",
     "technologies": [
       {
         "name": "PostgreSQL",
@@ -134,6 +142,7 @@
   },
 
   "iot": {
+    "description": "Desarrollo de soluciones con dispositivos y sistemas embebidos.",
     "technologies": [
       {
         "name": "ESP32",
@@ -157,13 +166,16 @@
     ]
   },
 
-  "development_tools": [
-    "Visual Studio Code",
-    "Visual Studio",
-    "Postman",
-    "Render",
-    "Vercel"
-  ],
+  "development_tools": {
+    "description": "Herramientas y plataformas utilizadas durante el desarrollo y despliegue de aplicaciones.",
+    "tools": [
+      "Visual Studio Code",
+      "Visual Studio 2022",
+      "Postman",
+      "Render",
+      "Vercel"
+    ]
+  },
 
   "artificial_intelligence": {
     "experience": [
