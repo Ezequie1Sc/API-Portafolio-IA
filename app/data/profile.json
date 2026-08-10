@@ -1,103 +1,113 @@
 {
-  "personal_information": {
-    "full_name": "Orlando Ezequiel Salazar Cruz",
-    "preferred_name": "Ezequiel Salazar",
-    "title": "Desarrollador Full Stack",
-    "location": {
-      "city": "Campeche",
-      "state": "Campeche",
-      "country": "México"
-    },
-    "email": "ezequielsc017@gmail.com",
-    "phone": "+52 9961071750"
-  },
-  "professional_summary": {
-    "headline": "Desarrollador Full Stack especializado en aplicaciones web, móviles y backend.",
-    "about": "Soy estudiante de Ingeniería en Sistemas Computacionales con experiencia en el desarrollo de aplicaciones web, móviles y backend. Me apasiona crear soluciones tecnológicas que resuelvan problemas reales mediante buenas prácticas de desarrollo, arquitecturas modernas e integración de tecnologías frontend, backend, bases de datos e inteligencia artificial.",
-    "current_position": "Programa de Formación Dual - Plenumsoft",
-    "experience_level": "Junior Full Stack Developer"
-  },
-  "specializations": [
-    "Desarrollo Full Stack",
-    "Desarrollo Backend",
-    "Desarrollo Frontend",
-    "Aplicaciones Móviles",
-    "APIs REST",
-    "Inteligencia Artificial",
-    "IoT",
-    "Bases de Datos Relacionales"
-  ],
-  "professional_objective": "Continuar desarrollándome como Ingeniero de Software participando en proyectos innovadores que involucren desarrollo web, backend, inteligencia artificial y arquitectura de software.",
-  "strengths": [
-    "Aprendizaje rápido",
-    "Resolución de problemas",
-    "Trabajo en equipo",
-    "Comunicación efectiva",
-    "Responsabilidad",
-    "Pensamiento analítico",
-    "Adaptabilidad",
-    "Desarrollo orientado a buenas prácticas"
-  ],
-  "areas_of_interest": [
-    "Arquitectura de Software",
-    "Desarrollo Full Stack",
-    "Backend",
-    "Inteligencia Artificial",
-    "Desarrollo Web",
-    "Aplicaciones Móviles",
-    "Internet de las Cosas",
-    "Tecnologías Emergentes"
-  ],
-  "preferred_technologies": {
-    "frontend": [
-      "React",
-      "Angular",
-      "Tailwind CSS"
-    ],
-    "backend": [
-      "FastAPI",
-      "Flask",
-      "Python"
-    ],
-    "mobile": [
-      "Flutter"
-    ],
-    "database": [
-      "PostgreSQL",
-      "MySQL",
-      "SQL Server"
-    ]
-  },
-  "currently_learning": [
-    "Arquitectura de Software",
-    "Inteligencia Artificial Generativa",
-    "Buenas prácticas de Backend",
-    "Despliegue de aplicaciones",
-    "Sistemas Distribuidos"
-  ],
-  "languages": [
-    {
-      "language": "Español",
-      "level": "Nativo"
-    },
-    {
-      "language": "Inglés",
-      "level": "B1"
-    }
-  ],
-  "availability": {
-    "employment": "Disponible para oportunidades profesionales",
-    "remote": true,
-    "hybrid": true,
-    "onsite": true
-  },
-  "assistant_context": {
-    "purpose": "Este perfil pertenece al propietario del portafolio. Todas las respuestas deben estar basadas únicamente en esta información y en los demás archivos JSON del proyecto.",
-    "answer_style": "Profesional, claro, directo y amable.",
-    "avoid": [
-      "Inventar información",
-      "Responder temas personales que no aparezcan en la base de conocimiento",
-      "Suponer experiencia no documentada"
-    ]
-  }
+"personal_information": {
+"full_name": "Orlando Ezequiel Salazar Cruz",
+"preferred_name": "Ezequiel Salazar",
+"title": "Ingeniero en Sistemas | Full Stack Developer",
+"location": {
+"city": "Campeche",
+"state": "Campeche",
+"country": "México"
+},
+"email": "[ezequielsc017@gmail.com](mailto:ezequielsc017@gmail.com)",
+"phone": "+52 9961071750"
+},
+
+"professional_summary": {
+"headline": "Ingeniero en Sistemas especializado en desarrollo Full Stack, aplicaciones web, móviles y backend.",
+"about": "Soy Ingeniero en Sistemas con formación y experiencia en el desarrollo de aplicaciones web, móviles y backend. Me apasiona crear soluciones tecnológicas que resuelvan problemas reales mediante buenas prácticas de desarrollo, arquitecturas modernas e integración de tecnologías frontend, backend, bases de datos e inteligencia artificial.",
+"current_position": "Programa de Formación Dual - Plenumsoft",
+"experience_level": "Ingeniero en Sistemas | Junior Full Stack Developer"
+},
+
+"specializations": [
+"Desarrollo Full Stack",
+"Desarrollo Backend",
+"Desarrollo Frontend",
+"Aplicaciones Móviles",
+"APIs REST",
+"Inteligencia Artificial",
+"IoT",
+"Bases de Datos Relacionales"
+],
+
+"professional_objective": "Desarrollarme profesionalmente como Ingeniero de Software y Full Stack Developer, participando en proyectos innovadores que involucren desarrollo web, backend, inteligencia artificial y arquitectura de software.",
+
+"strengths": [
+"Aprendizaje rápido",
+"Resolución de problemas",
+"Trabajo en equipo",
+"Comunicación efectiva",
+"Responsabilidad",
+"Pensamiento analítico",
+"Adaptabilidad",
+"Desarrollo orientado a buenas prácticas"
+],
+
+"areas_of_interest": [
+"Arquitectura de Software",
+"Desarrollo Full Stack",
+"Backend",
+"Inteligencia Artificial",
+"Desarrollo Web",
+"Aplicaciones Móviles",
+"Internet de las Cosas",
+"Tecnologías Emergentes"
+],
+
+"preferred_technologies": {
+"frontend": [
+"React",
+"Angular",
+"Tailwind CSS"
+],
+"backend": [
+"FastAPI",
+"Flask",
+"Python"
+],
+"mobile": [
+"Flutter"
+],
+"database": [
+"PostgreSQL",
+"MySQL",
+"SQL Server"
+]
+},
+
+"currently_learning": [
+"Arquitectura de Software",
+"Inteligencia Artificial Generativa",
+"Buenas prácticas de Backend",
+"Despliegue de aplicaciones",
+"Sistemas Distribuidos"
+],
+
+"languages": [
+{
+"language": "Español",
+"level": "Nativo"
+},
+{
+"language": "Inglés",
+"level": "B1"
+}
+],
+
+"availability": {
+"employment": "Disponible para oportunidades profesionales",
+"remote": true,
+"hybrid": true,
+"onsite": true
+},
+
+"assistant_context": {
+"purpose": "Este perfil pertenece al propietario del portafolio. Todas las respuestas deben estar basadas únicamente en esta información y en los demás archivos JSON del proyecto.",
+"answer_style": "Profesional, claro, directo y amable.",
+"avoid": [
+"Inventar información",
+"Responder temas personales que no aparezcan en la base de conocimiento",
+"Suponer experiencia no documentada"
+]
+}
 }
