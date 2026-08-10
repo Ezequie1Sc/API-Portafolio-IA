@@ -118,28 +118,31 @@
       }
     ]
   },
-
-  "database": {
-    "description": "Diseño, consulta y gestión de bases de datos.",
-    "technologies": [
-      {
-        "name": "PostgreSQL",
-        "level": "Avanzado"
-      },
-      {
-        "name": "MySQL",
-        "level": "Intermedio"
-      },
-      {
-        "name": "SQL Server",
-        "level": "Intermedio"
-      },
-      {
-        "name": "SQL",
-        "level": "Avanzado"
-      }
-    ]
-  },
+"database": {
+  "description": "Diseño, consulta y gestión de bases de datos.",
+  "technologies": [
+    {
+      "name": "PostgreSQL",
+      "level": "Avanzado"
+    },
+    {
+      "name": "MySQL",
+      "level": "Intermedio"
+    },
+    {
+      "name": "MongoDB",
+      "level": "Intermedio"
+    },
+    {
+      "name": "SQL Server",
+      "level": "Intermedio"
+    },
+    {
+      "name": "SQL",
+      "level": "Avanzado"
+    }
+  ]
+},
 
   "iot": {
     "description": "Desarrollo de soluciones con dispositivos y sistemas embebidos.",
