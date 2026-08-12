@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from app.services.knowledge.project_service import ProjectService
+from app.services.knowledge.certification_service import CertificationService
 
 
 class KnowledgeService:
@@ -11,6 +12,7 @@ class KnowledgeService:
         self.base_path = Path(__file__).parent.parent / "data"
 
         self.project_service = ProjectService()
+        self.certification_service = CertificationService()
 
     # =====================================
     # Método interno
@@ -62,7 +64,7 @@ class KnowledgeService:
         )
 
     # =====================================
-    # Skills (temporal)
+    # Skills
     # =====================================
 
     def get_skills_index(self):
@@ -78,24 +80,12 @@ class KnowledgeService:
         )
 
     # =====================================
-    # Certificaciones (temporal)
+    # Certificaciones
     # =====================================
 
-    def get_certifications_index(self):
+    def get_certifications(self):
 
-        return self._load_json(
-            self.base_path /
-            "certifications" /
-            "index.json"
-        )
-
-    def get_certification(self, filename: str):
-
-        return self._load_json(
-            self.base_path /
-            "certifications" /
-            filename
-        )
+        return self.certification_service.get()
 
     # =====================================
     # Contexto Base
@@ -125,7 +115,7 @@ class KnowledgeService:
 
     def search(self, question: str):
 
-        question = question.lower()
+        question = question.lower().strip()
 
         context = self.get_base_context()
 
@@ -154,7 +144,7 @@ class KnowledgeService:
             print()
 
         # =====================================
-        # Skills
+        # SKILLS
         # =====================================
 
         try:
@@ -190,40 +180,50 @@ class KnowledgeService:
             print()
 
         # =====================================
-        # Certificaciones
+        # CERTIFICACIONES
         # =====================================
 
         try:
 
-            certifications = []
+            certification_keywords = [
+                "certificación",
+                "certificaciones",
+                "certificado",
+                "certificados",
+                "curso",
+                "cursos",
+                "credencial",
+                "credenciales",
+                "freecodecamp",
+                "microsoft",
+                "cisco",
+                "kaggle",
+                "anthropic",
+                "linkedin learning"
+            ]
 
-            cert_index = self.get_certifications_index()
+            if any(
+                keyword in question
+                for keyword in certification_keywords
+            ):
 
-            for cert in cert_index["certifications"]:
+                certifications = self.certification_service.search(
+                    question
+                )
 
-                keywords = [
-                    keyword.lower()
-                    for keyword in cert["keywords"]
-                ]
+                if certifications:
 
-                if any(
-                    keyword in question
-                    for keyword in keywords
-                ):
-
-                    certifications.append(
-                        self.get_certification(cert["file"])
-                    )
-
-            if certifications:
-
-                context["certifications"] = certifications
+                    context["certifications"] = certifications
 
         except Exception as e:
 
             print("\nERROR EN CERTIFICACIONES")
             print(e)
             print()
+
+        # =====================================
+        # CONTEXTO FINAL
+        # =====================================
 
         print("\n========== CONTEXTO FINAL ==========")
         print(context.keys())
