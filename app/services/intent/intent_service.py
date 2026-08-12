@@ -879,22 +879,26 @@ class IntentService:
         # React determina que se trata de SKILL.
         # ------------------------------------------------------
 
-        for word, intent in self.specific_keywords.items():
+        for word, specific_intent in self.specific_keywords.items():
 
             normalized_word = self.normalize(word)
 
-            if normalized_word in question:
+            if normalized_word not in question:
+                continue
 
-                # GitHub tiene prioridad cuando aparece
-                # explícitamente.
+            # GitHub explícito tiene prioridad.
+            if specific_intent == ChatIntent.GITHUB:
 
-                if intent == ChatIntent.GITHUB:
+                return ChatIntent.GITHUB
 
-                    return ChatIntent.GITHUB
+            # Una tecnología concreta solamente debe
+            # convertir la pregunta en SKILL cuando
+            # SKILL ya sea una de las intenciones detectadas
+            # o cuando no exista otra intención clara.
 
-                # Una tecnología concreta indica SKILL.
+            if specific_intent == ChatIntent.SKILL:
 
-                if intent == ChatIntent.SKILL:
+                if ChatIntent.SKILL in best_intents:
 
                     return ChatIntent.SKILL
 
