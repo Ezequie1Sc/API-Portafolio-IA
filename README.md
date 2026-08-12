@@ -22,9 +22,8 @@
 
 # 🖼️ Portada / Arquitectura
 
-> Este README es **autocontenido**: la portada visual y los diagramas están escritos directamente en Markdown mediante Mermaid, por lo que no necesitas subir una imagen adicional al repositorio.
 
-```mermaid
+
 flowchart LR
     U["👤 Usuario"] --> F["🖥️ Frontend"]
     F -->|POST /chat| C["💬 ChatService"]
