@@ -37,13 +37,18 @@ REGLAS
         # REGLAS ESPECÍFICAS POR INTENT
         # ==========================================
 
+        # ==========================================
+        # PROFILE - CARD
+        # ==========================================
+
         if intent == ChatIntent.PROFILE:
 
             prompt += """
 
 IMPORTANTE
 
-El frontend mostrará automáticamente una tarjeta visual del perfil.
+El frontend mostrará automáticamente una tarjeta
+visual con la información completa del perfil.
 
 NO repitas:
 
@@ -53,15 +58,20 @@ NO repitas:
 - Ubicación
 - Tecnologías
 - Habilidades
+- Información detallada del perfil
 
-Responde únicamente con una breve introducción (máximo 2 líneas).
+Responde únicamente con una breve introducción de
+máximo 2 líneas.
 
 Ejemplo:
 
-"¡Con gusto! 😊
-Aquí tienes mi perfil profesional."
+"👋 ¡Claro! Aquí tienes mi perfil profesional."
 
 """
+
+        # ==========================================
+        # GITHUB - CARD
+        # ==========================================
 
         elif intent == ChatIntent.GITHUB:
 
@@ -69,14 +79,16 @@ Aquí tienes mi perfil profesional."
 
 IMPORTANTE
 
-El frontend mostrará automáticamente una tarjeta de GitHub.
+El frontend mostrará automáticamente una tarjeta
+visual de GitHub.
 
-NO escribas:
+NO repitas:
 
 - Usuario
-- Enlaces
+- URL
 - Repositorios
 - Contribuciones
+- Enlaces
 
 Responde únicamente con una breve introducción.
 
@@ -86,27 +98,37 @@ Ejemplo:
 
 """
 
+        # ==========================================
+        # SKILLS - CARD
+        # ==========================================
+
         elif intent == ChatIntent.SKILL:
 
             prompt += """
 
 IMPORTANTE
 
-El frontend mostrará automáticamente la tarjeta de tecnologías.
+El frontend mostrará automáticamente una tarjeta
+visual con las tecnologías y habilidades.
 
-NO enumeres tecnologías.
+NO enumeres nuevamente todas las tecnologías.
 
-NO escribas el stack.
+NO escribas el stack completo.
 
-NO describas habilidades.
+NO hagas una lista de habilidades.
 
-Solo escribe una introducción.
+Responde únicamente con una breve introducción.
 
 Ejemplo:
 
-"🚀 Estas son las tecnologías con las que trabajo actualmente."
+"🚀 Estas son las tecnologías y herramientas con las
+que trabajo actualmente."
 
 """
+
+        # ==========================================
+        # PROJECTS - TEXTO NORMAL
+        # ==========================================
 
         elif intent == ChatIntent.PROJECT:
 
@@ -116,51 +138,32 @@ IMPORTANTE
 
 El usuario está preguntando por proyectos.
 
-Puedes describir el proyecto solicitado normalmente.
+Projects NO se muestra como una tarjeta visual.
+
+Responde normalmente utilizando únicamente la
+información proporcionada.
+
+Puedes mencionar:
+
+- Nombre del proyecto
+- Tipo de proyecto
+- Tecnologías
+- Descripción
+- Funcionalidades
+- Categoría
+- Información relevante disponible
+
+Si el usuario pregunta por varios proyectos,
+puedes presentar la información de forma clara
+y organizada.
+
+No inventes proyectos ni tecnologías.
 
 """
 
-        elif intent == ChatIntent.CONTACT:
-
-            prompt += """
-
-IMPORTANTE
-
-El frontend mostrará automáticamente la tarjeta de contacto.
-
-No repitas correo, teléfono o ubicación.
-
-Solo invita al usuario a ponerse en contacto.
-
-"""
-
-        elif intent == ChatIntent.EDUCATION:
-
-            prompt += """
-
-IMPORTANTE
-
-El frontend mostrará automáticamente la tarjeta de educación.
-
-No enumeres nuevamente los estudios.
-
-Solo escribe una breve introducción.
-
-"""
-
-        elif intent == ChatIntent.EXPERIENCE:
-
-            prompt += """
-
-IMPORTANTE
-
-El frontend mostrará automáticamente la tarjeta de experiencia.
-
-No repitas toda la experiencia.
-
-Solo escribe una breve introducción.
-
-"""
+        # ==========================================
+        # CERTIFICATIONS - TEXTO NORMAL
+        # ==========================================
 
         elif intent == ChatIntent.CERTIFICATION:
 
@@ -168,13 +171,105 @@ Solo escribe una breve introducción.
 
 IMPORTANTE
 
-El frontend mostrará automáticamente la tarjeta de certificaciones.
+El usuario está preguntando por certificaciones.
 
-No vuelvas a listar las certificaciones.
+Las certificaciones NO se muestran como una tarjeta
+visual.
 
-Solo escribe una breve introducción.
+Responde normalmente utilizando la información
+proporcionada.
+
+Puedes mencionar:
+
+- Nombre de la certificación
+- Institución
+- Año
+- Categoría
+- Descripción
+- Temas aprendidos
+- Habilidades adquiridas
+
+Si el usuario pregunta por una certificación
+específica, responde únicamente utilizando los
+datos disponibles de esa certificación.
+
+Si pregunta por certificaciones de un área específica,
+filtra la información correspondiente.
+
+Nunca inventes certificaciones, instituciones,
+fechas o habilidades.
 
 """
+
+        # ==========================================
+        # CONTACT - TEXTO NORMAL
+        # ==========================================
+
+        elif intent == ChatIntent.CONTACT:
+
+            prompt += """
+
+IMPORTANTE
+
+El usuario está preguntando por información de contacto.
+
+No existe una tarjeta visual especial para contacto.
+
+Responde normalmente utilizando únicamente la
+información proporcionada.
+
+Puedes mencionar correo, teléfono, ubicación u otros
+medios de contacto cuando el usuario los solicite.
+
+"""
+
+        # ==========================================
+        # EDUCATION - TEXTO NORMAL
+        # ==========================================
+
+        elif intent == ChatIntent.EDUCATION:
+
+            prompt += """
+
+IMPORTANTE
+
+El usuario está preguntando por formación académica.
+
+No existe una tarjeta visual especial para educación.
+
+Responde normalmente utilizando únicamente la
+información proporcionada.
+
+Puedes mencionar institución, carrera, grado,
+formación y demás información disponible.
+
+"""
+
+        # ==========================================
+        # EXPERIENCE - TEXTO NORMAL
+        # ==========================================
+
+        elif intent == ChatIntent.EXPERIENCE:
+
+            prompt += """
+
+IMPORTANTE
+
+El usuario está preguntando por experiencia profesional.
+
+No existe una tarjeta visual especial para experiencia.
+
+Responde normalmente utilizando únicamente la
+información proporcionada.
+
+Puedes mencionar empresas, puestos, responsabilidades,
+tecnologías y experiencia relevante.
+
+"""
+
+        # ==========================================
+        # INFORMACIÓN FINAL
+        # ==========================================
 
         prompt += f"""
 
@@ -184,12 +279,13 @@ INTENCIÓN
 PREGUNTA
 {question}
 
-INFORMACIÓN
+INFORMACIÓN DISPONIBLE
 {data}
 
 RESPUESTA
 
-Responde únicamente utilizando la información proporcionada.
+Responde únicamente utilizando la información
+proporcionada.
 
 Si la información no existe, indícalo claramente.
 
