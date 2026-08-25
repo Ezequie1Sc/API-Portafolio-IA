@@ -1,4 +1,4 @@
-# 🤖 Portfolio IA API
+#  Portfolio IA API
 
 <div align="center">
 
