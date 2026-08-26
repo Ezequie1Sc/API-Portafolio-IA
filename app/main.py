@@ -21,6 +21,7 @@ app = FastAPI(
 
 configure_cors(app)
 
+
 # =====================================================
 # Routers
 # =====================================================
@@ -28,11 +29,13 @@ configure_cors(app)
 app.include_router(chat_router)
 app.include_router(knowledge_router)
 
+
 # =====================================================
 # Services
 # =====================================================
 
 gemini_service = GeminiService()
+
 
 # =====================================================
 # Root
@@ -61,6 +64,7 @@ async def root():
             },
             "utilities": {
                 "health": "/health",
+                "warmup": "/warmup",
                 "test_gemini": "/test-gemini",
                 "models": "/models"
             }
@@ -80,6 +84,36 @@ async def health():
         "application": settings.APP_NAME,
         "version": settings.API_VERSION
     }
+
+
+# =====================================================
+# Warmup Backend + Gemini
+# =====================================================
+
+@app.get("/warmup")
+async def warmup():
+
+    try:
+
+        response = gemini_service.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents="Responde únicamente: OK"
+        )
+
+        return {
+            "status": "ready",
+            "backend": "ready",
+            "gemini": response.text
+        }
+
+    except Exception as e:
+
+        print(f"Warmup error: {e}")
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )
 
 
 # =====================================================
