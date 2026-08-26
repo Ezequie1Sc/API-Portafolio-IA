@@ -1,8 +1,8 @@
-# 🤖 Portfolio IA API
+#  Portfolio IA API
 
 <div align="center">
 
-## 🚀 Backend de Inteligencia Artificial para Portafolio Personal
+## 🚀 Backend de Inteligencia Artificial para Portafolio Personal.
 
 **FastAPI + Google Gemini + sistema de conocimiento JSON + detección de intenciones**
 
