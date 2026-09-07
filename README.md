@@ -2,7 +2,7 @@
 
 <div align="center">
 
-## 🚀 Backend de Inteligencia Artificial para Portafolio Personal.
+## 🚀 Backend de Inteligencia Artificial.
 
 **FastAPI + Google Gemini + sistema de conocimiento JSON + detección de intenciones**
 
